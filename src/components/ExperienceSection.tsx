@@ -42,26 +42,27 @@ const ExperienceItem = ({
 
   return (
     <div className="relative group">
-      {/* Timeline dot */}
+      {/* Timeline dot with improved positioning and responsiveness */}
       <div className={`
-        absolute z-20 w-3 h-3 md:w-4 md:h-4 bg-[#4B84F2] rounded-full 
-        left-[7px] md:left-1/2 md:-translate-x-1/2 top-8 md:top-10
-        shadow-[0_0_0_4px_rgba(30,41,59,1)]
-        group-hover:shadow-[0_0_0_6px_rgba(30,41,59,1)]
+        absolute z-20 w-4 h-4 rounded-full 
+        left-[-8px] md:left-1/2 md:-translate-x-1/2
+        top-8 md:top-10
+        border-4 ${theme === 'light' 
+          ? 'border-gray-50 bg-[#4B84F2]' 
+          : 'border-[#0A0F1C] bg-[#4B84F2]'}
         transition-all duration-300
-        ${theme === 'light' ? 'shadow-[0_0_0_4px_#f1f5f9]' : ''}
-      `}>
-        <div className="absolute w-full h-full rounded-full bg-[#4B84F2] animate-ping opacity-20" />
-      </div>
+        before:content-[''] before:absolute before:w-6 before:h-6 before:-left-1 before:-top-1
+        before:rounded-full before:bg-[#4B84F2] before:opacity-20 before:animate-ping
+      `} />
 
-      {/* Content card */}
+      {/* Content card with improved spacing */}
       <motion.div 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={slideVariants}
         className={`
-          relative ml-8 md:mx-4 mb-8 md:mb-16
+          relative ml-6 md:mx-4 mb-8 md:mb-16
           ${position === 'left' ? 'md:mr-[50%] md:pr-8' : 'md:ml-[50%] md:pl-8'}
         `}
       >
@@ -129,9 +130,10 @@ const ExperienceSection = () => {
       company: "Kiran Hospital",
       duration: "Dec 2025 – Present",
       responsibilities: [
-        "Built OPD Assessment v2, HR Digitization",
+        "Built OPD Assessment v2 and HR Digitization",
         "Developed Dormitory System & Acuity-based staff allocation",
-        "Laravel + React + MySQL based stack"
+        "PHP core, Laravel + React + MySQL based stack and Power BI",
+        "Small task automation using sharepoint and power automate"
       ],
       icon: <Building size={16} className="text-[#4B84F2]" />
     },
@@ -140,8 +142,11 @@ const ExperienceSection = () => {
       company: "Invica Infotech",
       duration: "April 2024",
       responsibilities: [
-        "Developed Job Portal using ASP.NET MVC",
-        "Razor pages, job listings, and employer panel"
+        "Contributed to live industry projects as part of the internship program.",
+        "Designed and developed a Job Portal using ASP.NET MVC and SQL Server.",
+        "Built key features including job listings, employer dashboards, and WhatsApp-style web UI for communication between employers and job seekers.",
+        "Utilized Razor Pages, CSS, Bootstrap, JavaScript, jQuery, and Ajax for front-end and interactivity.",
+        "Implemented backend logic for job posting, searching, and user management."
       ],
       icon: <Layers size={16} className="text-[#4B84F2]" />
     },
@@ -179,15 +184,18 @@ const ExperienceSection = () => {
       </motion.div>
 
       <div className="container mx-auto px-4 relative">
-        {/* Center timeline line */}
+        {/* Improved timeline line */}
         <div className={`
-          absolute left-[8px] md:left-1/2 top-0 bottom-0 w-[2px]
-          md:-translate-x-1/2
-          ${theme === 'light' ? 'bg-gray-200' : 'bg-[#1E293B]'}
+          absolute h-full w-[2px]
+          left-0 md:left-1/2 md:-translate-x-1/2
+          before:absolute before:w-full before:h-full
+          ${theme === 'light' 
+            ? 'before:bg-gradient-to-b before:from-gray-200 before:via-gray-200 before:to-transparent bg-gray-200' 
+            : 'before:bg-gradient-to-b before:from-[#1E293B] before:via-[#1E293B] before:to-transparent bg-[#1E293B]'}
         `} />
         
-        {/* Experience items */}
-        <div className="relative max-w-7xl mx-auto">
+        {/* Experience items container with improved spacing */}
+        <div className="relative max-w-7xl mx-auto pl-6 md:pl-0">
           {experiences.map((exp, index) => (
             <ExperienceItem
               key={index}
