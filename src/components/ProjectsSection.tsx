@@ -285,31 +285,30 @@ const ProjectsSection = () => {
 
   const projects: Project[] = [
     {
-  title: "Real Estate Management System",
-  description: "Property listing, filtering, admin panel, user auth",
-  longDescription: "A user-friendly property management web application built using core PHP. It includes dynamic property listings, powerful search and filtering, secure user authentication, and a responsive admin panel. Users can manage listings, upload multiple images, and handle inquiries efficiently. The system integrates SMTP for email communication, enhancing user engagement.",
-  image: "/projects/realestate-management.png",
-  technologies: [
-    { name: "PHP (Core)", color: "#8892BF" },
+      title: "Real Estate Management System",
+      description: "Property listing, filtering, admin panel, user auth",
+      longDescription: "A comprehensive property management solution featuring advanced property listing capabilities, robust filtering options, secure user authentication, and an intuitive admin panel. The system streamlines property searches and management tasks for both agents and clients.",
+      image: "/projects/realestate-management.png",
+      technologies: [
+         { name: "PHP (Core)", color: "#8892BF" },
     { name: "HTML", color: "#E34C26" },
     { name: "CSS", color: "#264DE4" },
     { name: "JavaScript", color: "#F0DB4F" },
     { name: "Bootstrap", color: "#7952B3" },
     { name: "MySQL", color: "#4479A1" },
     { name: "SMTP Mailer", color: "#6C757D" }
-  ],
-  category: "php",
-  github: "https://github.com/dixitvaghela11/realestate-management",
-  features: [
-    "Property listing with image gallery",
-    "Advanced search and filtering",
-    "User registration and login",
-    "Role-based access for users and admins",
-    "Admin dashboard with property controls",
-    "Enquiry form with SMTP email notifications",
-    "Responsive frontend using Bootstrap"
-  ]
-}
+      ],
+      category: "php",
+      github: "https://github.com/dixitvaghela11/realestate-management",
+      features: [
+        "Advanced property search and filtering",
+        "User authentication and authorization",
+        "Admin dashboard with analytics",
+        "Property listing management",
+        "Image gallery with multiple uploads",
+        "Enquiry management system"
+      ]
+    },
 
     {
       title: "Job Portal",
