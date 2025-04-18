@@ -284,152 +284,157 @@ const ProjectsSection = () => {
   const { theme } = useTheme();
 
   const projects: Project[] = [
-    {
-      title: "Real Estate Management System",
-      description: "Property listing, filtering, admin panel, user auth",
-      longDescription: "A comprehensive property management solution featuring advanced property listing capabilities, robust filtering options, secure user authentication, and an intuitive admin panel. The system streamlines property searches and management tasks for both agents and clients.",
-      image: "/projects/realestate-management.png",
-      technologies: [
-         { name: "PHP (Core)", color: "#8892BF" },
-    { name: "HTML", color: "#E34C26" },
-    { name: "CSS", color: "#264DE4" },
-    { name: "JavaScript", color: "#F0DB4F" },
-    { name: "Bootstrap", color: "#7952B3" },
-    { name: "MySQL", color: "#4479A1" },
-    { name: "SMTP Mailer", color: "#6C757D" }
-      ],
-      category: "php",
-      github: "https://github.com/dixitvaghela11/realestate-management",
-      features: [
-        "Advanced property search and filtering",
-        "User authentication and authorization",
-        "Admin dashboard with analytics",
-        "Property listing management",
-        "Image gallery with multiple uploads",
-        "OTP wise user authentication",
-        "testimonial management",
-        "Enquiry management system and emails communication"
-      ]
-    },
-
-    {
-      title: "Job Portal",
-      description: "Job search, admin stats, employer panel",
-      longDescription: "An end-to-end job search platform with powerful search functionality, detailed analytics dashboard for administrators, and a dedicated employer panel. Features include job posting management, applicant tracking, and automated application processing.",
-      image: "/projects/job-portal.png",
-      technologies: [
-        { name: "ASP.NET MVC", color: "#512BD4" },
-        { name: "csHtml", color: "#E34C26" },
-    { name: "CSS", color: "#264DE4" },
-    { name: "JavaScript", color: "#F0DB4F" },
-    { name: "Bootstrap", color: "#7952B3" },
-        { name: "C#", color: "#239120" },
-        { name: "SQL Server", color: "#CC2927" }
-      ],
-      category: "asp",
-      github: "https://github.com/dixitvaghela11/job-portal",
-      features: [
-        "job seeker and employer authentication and authorization",
-        "Advanced job search and filtering",
-        "Employer dashboard",
-        "Job seeker dashboard",
-        "Application tracking system",
-        "Resume parser",
-        "Email notifications",
-        "Chat between employer and job seeker"
-      ]
-    },
-    {
-  "title": "Online Shopping System",
-  "category": "php",
-  "shortDescription": "Cart, checkout, order management",
-  "longDescription": "A feature-rich e-commerce platform that provides a seamless shopping experience through efficient cart management, a secure checkout system, and robust order tracking. This system also includes inventory management, customer reviews, automated order processing, and coupon-based discount functionality. It’s built with a mobile-responsive interface using Bootstrap and JavaScript, and a strong backend powered by PHP and MySQL.",
-  "image": "/projects/online-shopping.png",
-  "technologies": [
-    { "name": "PHP (Core)", "color": "#8892BF" },
-    { "name": "HTML", "color": "#E34C26" },
-    { "name": "CSS", "color": "#264DE4" },
-    { "name": "JavaScript", "color": "#F0DB4F" },
-    { "name": "Bootstrap", "color": "#7952B3" },
-    { "name": "MySQL", "color": "#4479A1" }
-  ],
-  "features": [
-    "Shopping cart management",
-    "Order tracking system",
-    "Product category and sub category wise filter",
-    "Product reviews",
-    "Coupon-wise discount",
-    "Inventory management",
-    "Razorpay integration",
-    "User wishlist"
-  ],
-  "github": "https://github.com/dixitvaghela11/online-shopping"
-}
-
-    {
-      title: "OPD Assessment System",
-      description: "Patient record tracking, OPD data efficiency",
-      longDescription: "Advanced patient management system for outpatient departments, featuring efficient record tracking, appointment scheduling, and data analysis tools. Improves healthcare delivery through streamlined workflows and accurate patient data management.",
-      image: "/projects/opd-assessment.png",
-      technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "React", color: "#61DAFB" },
-    { "name": "Taliwand CSS", "color": "#264DE4" },
-        { name: "MySQL", color: "#4479A1" }
-      ],
-      category: "laravel",
-      github: "https://github.com/dixitvaghela11",
-      features: [
-        "Patient record management",
-        "Appointment scheduling",
-        "Medical history tracking",
-        "Prescription management",
-        "Lab test integration",
-        "Billing system"
-      ]
-    },
-    {
-      title: "HR Digitaliz",
-      description: "Streamlined onboarding, employee document management",
-      longDescription: "Modern HR management solution that digitizes employee onboarding processes and document management. Includes automated workflow processing, document verification, and secure storage of employee information with role-based access control.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
-      technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "React", color: "#61DAFB" }
-      ],
-      category: "react",
-      github: "https://github.com/dixitvaghela11",
-      features: [
-        "Digital document management",
-        "Employee onboarding workflow",
-        "Document verification system",
-        "Role-based access control",
-        "Automated notifications",
-        "Document expiry tracking"
-      ]
-    },
-    {
-      title: "Dormitory Management System",
-      description: "Hospital accommodation tracking, availability filter",
-      longDescription: "Smart accommodation management system for hospitals with real-time availability tracking, automated Management processes, and comprehensive reporting. Features include maintenance scheduling and occupancy optimization.",
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
-      technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "MySQL", color: "#4479A1" }
-      ],
-      category: "laravel",
-      github: "https://github.com/dixitvaghela11",
-      features: [
-        "Real-time availability tracking",
-        "Automated room Management",
-        "Maintenance scheduling",
-        "Occupancy reporting",
-        "Cleaning management",
-        "Resident management"
-      ]
-    }
-  ];
-
+  {
+    title: "Real Estate Management System",
+    description: "Property listing, filtering, admin panel, user auth",
+    longDescription:
+      "A comprehensive property management solution featuring advanced property listing capabilities, robust filtering options, secure user authentication, and an intuitive admin panel. The system streamlines property searches and management tasks for both agents and clients.",
+    image: "/projects/realestate-management.png",
+    technologies: [
+      { name: "PHP (Core)", color: "#8892BF" },
+      { name: "HTML", color: "#E34C26" },
+      { name: "CSS", color: "#264DE4" },
+      { name: "JavaScript", color: "#F0DB4F" },
+      { name: "Bootstrap", color: "#7952B3" },
+      { name: "MySQL", color: "#4479A1" },
+      { name: "SMTP Mailer", color: "#6C757D" },
+    ],
+    category: "php",
+    github: "https://github.com/dixitvaghela11/realestate-management",
+    features: [
+      "Advanced property search and filtering",
+      "User authentication and authorization",
+      "Admin dashboard with analytics",
+      "Property listing management",
+      "Image gallery with multiple uploads",
+      "OTP wise user authentication",
+      "testimonial management",
+      "Enquiry management system and emails communication",
+    ],
+  },
+  {
+    title: "Job Portal",
+    description: "Job search, admin stats, employer panel",
+    longDescription:
+      "An end-to-end job search platform with powerful search functionality, detailed analytics dashboard for administrators, and a dedicated employer panel. Features include job posting management, applicant tracking, and automated application processing.",
+    image: "/projects/job-portal.png",
+    technologies: [
+      { name: "ASP.NET MVC", color: "#512BD4" },
+      { name: "csHtml", color: "#E34C26" },
+      { name: "CSS", color: "#264DE4" },
+      { name: "JavaScript", color: "#F0DB4F" },
+      { name: "Bootstrap", color: "#7952B3" },
+      { name: "C#", color: "#239120" },
+      { name: "SQL Server", color: "#CC2927" },
+    ],
+    category: "asp",
+    github: "https://github.com/dixitvaghela11/job-portal",
+    features: [
+      "job seeker and employer authentication and authorization",
+      "Advanced job search and filtering",
+      "Employer dashboard",
+      "Job seeker dashboard",
+      "Application tracking system",
+      "Resume parser",
+      "Email notifications",
+      "Chat between employer and job seeker",
+    ],
+  },
+  {
+    title: "Online Shopping System",
+    category: "php",
+    shortDescription: "Cart, checkout, order management",
+    longDescription:
+      "A feature-rich e-commerce platform that provides a seamless shopping experience through efficient cart management, a secure checkout system, and robust order tracking. This system also includes inventory management, customer reviews, automated order processing, and coupon-based discount functionality. It’s built with a mobile-responsive interface using Bootstrap and JavaScript, and a strong backend powered by PHP and MySQL.",
+    image: "/projects/online-shopping.png",
+    technologies: [
+      { name: "PHP (Core)", color: "#8892BF" },
+      { name: "HTML", color: "#E34C26" },
+      { name: "CSS", color: "#264DE4" },
+      { name: "JavaScript", color: "#F0DB4F" },
+      { name: "Bootstrap", color: "#7952B3" },
+      { name: "MySQL", color: "#4479A1" },
+    ],
+    features: [
+      "Shopping cart management",
+      "Order tracking system",
+      "Product category and sub category wise filter",
+      "Product reviews",
+      "Coupon-wise discount",
+      "Inventory management",
+      "Razorpay integration",
+      "User wishlist",
+    ],
+    github: "https://github.com/dixitvaghela11/online-shopping",
+  },
+  {
+    title: "OPD Assessment System",
+    description: "Patient record tracking, OPD data efficiency",
+    longDescription:
+      "Advanced patient management system for outpatient departments, featuring efficient record tracking, appointment scheduling, and data analysis tools. Improves healthcare delivery through streamlined workflows and accurate patient data management.",
+    image: "/projects/opd-assessment.png",
+    technologies: [
+      { name: "Laravel", color: "#FF2D20" },
+      { name: "React", color: "#61DAFB" },
+      { name: "Taliwand CSS", color: "#264DE4" },
+      { name: "MySQL", color: "#4479A1" },
+    ],
+    category: "laravel",
+    github: "https://github.com/dixitvaghela11",
+    features: [
+      "Patient record management",
+      "Appointment scheduling",
+      "Medical history tracking",
+      "Prescription management",
+      "Lab test integration",
+      "Billing system",
+    ],
+  },
+  {
+    title: "HR Digitaliz",
+    description: "Streamlined onboarding, employee document management",
+    longDescription:
+      "Modern HR management solution that digitizes employee onboarding processes and document management. Includes automated workflow processing, document verification, and secure storage of employee information with role-based access control.",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
+    technologies: [
+      { name: "Laravel", color: "#FF2D20" },
+      { name: "React", color: "#61DAFB" },
+    ],
+    category: "react",
+    github: "https://github.com/dixitvaghela11",
+    features: [
+      "Digital document management",
+      "Employee onboarding workflow",
+      "Document verification system",
+      "Role-based access control",
+      "Automated notifications",
+      "Document expiry tracking",
+    ],
+  },
+  {
+    title: "Dormitory Management System",
+    description: "Hospital accommodation tracking, availability filter",
+    longDescription:
+      "Smart accommodation management system for hospitals with real-time availability tracking, automated Management processes, and comprehensive reporting. Features include maintenance scheduling and occupancy optimization.",
+    image:
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
+    technologies: [
+      { name: "Laravel", color: "#FF2D20" },
+      { name: "MySQL", color: "#4479A1" },
+    ],
+    category: "laravel",
+    github: "https://github.com/dixitvaghela11",
+    features: [
+      "Real-time availability tracking",
+      "Automated room Management",
+      "Maintenance scheduling",
+      "Occupancy reporting",
+      "Cleaning management",
+      "Resident management",
+    ],
+  },
+];
   const categories = [
     { id: 'all', name: 'All' },
     { id: 'laravel', name: 'Laravel' },
