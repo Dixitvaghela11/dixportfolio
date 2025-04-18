@@ -306,7 +306,9 @@ const ProjectsSection = () => {
         "Admin dashboard with analytics",
         "Property listing management",
         "Image gallery with multiple uploads",
-        "Enquiry management system"
+        "OTP wise user authentication",
+        "testimonial management",
+        "Enquiry management system and emails communication"
       ]
     },
 
@@ -317,18 +319,24 @@ const ProjectsSection = () => {
       image: "/projects/job-portal.png",
       technologies: [
         { name: "ASP.NET MVC", color: "#512BD4" },
+        { name: "csHtml", color: "#E34C26" },
+    { name: "CSS", color: "#264DE4" },
+    { name: "JavaScript", color: "#F0DB4F" },
+    { name: "Bootstrap", color: "#7952B3" },
         { name: "C#", color: "#239120" },
         { name: "SQL Server", color: "#CC2927" }
       ],
       category: "asp",
       github: "https://github.com/dixitvaghela11/job-portal",
       features: [
+        "job seeker and employer authentication and authorization",
         "Advanced job search and filtering",
         "Employer dashboard",
+        "Job seeker dashboard",
         "Application tracking system",
         "Resume parser",
         "Email notifications",
-        "Analytics dashboard"
+        "Chat between employer and job seeker"
       ]
     },
     {
@@ -365,6 +373,8 @@ const ProjectsSection = () => {
       image: "/projects/opd-assessment.png",
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
+        { name: "React", color: "#61DAFB" },
+    { "name": "Taliwand CSS", "color": "#264DE4" },
         { name: "MySQL", color: "#4479A1" }
       ],
       category: "laravel",
