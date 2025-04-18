@@ -332,25 +332,32 @@ const ProjectsSection = () => {
       ]
     },
     {
-      title: "Online Shopping System",
-      description: "Cart, checkout, order management",
-      longDescription: "Feature-rich e-commerce platform with seamless cart management, secure checkout process, and comprehensive order tracking. Includes inventory management, user reviews, and automated order processing capabilities.",
-      image: "/projects/online-shopping.png",
-      technologies: [
-        { name: "PHP", color: "#777BB3" },
-        { name: "MySQL", color: "#4479A1" }
-      ],
-      category: "php",
-      github: "https://github.com/dixitvaghela11/online-shopping",
-      features: [
-        "Shopping cart management",
-        "Secure payment gateway",
-        "Order tracking system",
-        "Product reviews",
-        "Inventory management",
-        "User wishlist"
-      ]
-    },
+  "title": "Online Shopping System",
+  "category": "php",
+  "shortDescription": "Cart, checkout, order management",
+  "longDescription": "A feature-rich e-commerce platform that provides a seamless shopping experience through efficient cart management, a secure checkout system, and robust order tracking. This system also includes inventory management, customer reviews, automated order processing, and coupon-based discount functionality. It’s built with a mobile-responsive interface using Bootstrap and JavaScript, and a strong backend powered by PHP and MySQL.",
+  "image": "/projects/online-shopping.png",
+  "technologies": [
+    { "name": "PHP (Core)", "color": "#8892BF" },
+    { "name": "HTML", "color": "#E34C26" },
+    { "name": "CSS", "color": "#264DE4" },
+    { "name": "JavaScript", "color": "#F0DB4F" },
+    { "name": "Bootstrap", "color": "#7952B3" },
+    { "name": "MySQL", "color": "#4479A1" }
+  ],
+  "features": [
+    "Shopping cart management",
+    "Order tracking system",
+    "Product category and sub category wise filter",
+    "Product reviews",
+    "Coupon-wise discount",
+    "Inventory management",
+    "Razorpay integration",
+    "User wishlist"
+  ],
+  "github": "https://github.com/dixitvaghela11/online-shopping"
+}
+
     {
       title: "OPD Assessment System",
       description: "Patient record tracking, OPD data efficiency",
