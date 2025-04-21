@@ -25,7 +25,7 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
 
   return (
     <div 
-      className="h-[450px] perspective-1000 w-full cursor-pointer"
+      className="h-[520px] perspective-1000 w-full cursor-pointer"
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div 
@@ -37,23 +37,23 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
         <Card className={`absolute w-full h-full rounded-xl backface-hidden flex flex-col theme-transition overflow-hidden ${
           theme === 'light' ? 'bg-white shadow-lg hover:shadow-xl' : 'glass'
         }`}>
-          <div className="h-64 relative">
+          <div className="h-[280px] relative">
             <img 
               src={project.image} 
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80" />
           </div>
-          <CardContent className="p-6 flex-1 flex flex-col">
-            <h3 className="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
-              {project.title}
-            </h3>
-            <p className={`text-sm mb-4 flex-grow ${
-              theme === 'light' ? 'text-gray-600' : 'text-gray-300'
-            }`}>{project.description}</p>
-            <div className="space-y-4">
-              <div className="flex flex-wrap gap-2">
+          <CardContent className="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+                {project.title}
+              </h3>
+              <p className={`text-sm mb-4 line-clamp-2 ${
+                theme === 'light' ? 'text-gray-600' : 'text-gray-300'
+              }`}>{project.description}</p>
+              <div className="flex flex-wrap gap-2 max-h-[60px] overflow-hidden">
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
@@ -64,7 +64,10 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
                   </span>
                 ))}
               </div>
-              <p className="text-xs text-gray-400 text-center border-t border-gray-200 dark:border-gray-700 pt-4">
+            </div>
+            
+            <div className="mt-4 pt-2">
+              <p className="text-xs text-gray-400 text-center border-t border-gray-200 dark:border-gray-700 pt-3">
                 Click to see details
               </p>
             </div>
@@ -195,12 +198,14 @@ const ProjectModal = ({ project, isOpen, onClose }: {
         {/* Add a subtle animation to modal content */}
         <div className="space-y-8 animate-fadeIn">
           {/* Project Image */}
-          <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-            />
+          <div className="w-full overflow-hidden rounded-lg shadow-lg">
+            <div className="relative aspect-[1536/1024]">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+              />
+            </div>
           </div>
 
           {/* Project Title */}
@@ -287,12 +292,17 @@ const ProjectsSection = () => {
     {
       title: "Real Estate Management System",
       description: "Property listing, filtering, admin panel, user auth",
-      longDescription: "A comprehensive property management solution featuring advanced property listing capabilities, robust filtering options, secure user authentication, and an intuitive admin panel. The system streamlines property searches and management tasks for both agents and clients.",
+      longDescription:
+        "A comprehensive property management solution featuring advanced property listing capabilities, robust filtering options, secure user authentication, and an intuitive admin panel. The system streamlines property searches and management tasks for both agents and clients.",
       image: "/projects/realestate-management.png",
       technologies: [
-        { name: "PHP", color: "#777BB3" },
+        { name: "PHP (Core)", color: "#8892BF" },
+        { name: "HTML", color: "#E34C26" },
+        { name: "CSS", color: "#264DE4" },
+        { name: "JavaScript", color: "#F0DB4F" },
+        { name: "Bootstrap", color: "#7952B3" },
         { name: "MySQL", color: "#4479A1" },
-        { name: "Bootstrap", color: "#7952B3" }
+        { name: "SMTP Mailer", color: "#6C757D" },
       ],
       category: "php",
       github: "https://github.com/dixitvaghela11/realestate-management",
@@ -302,110 +312,145 @@ const ProjectsSection = () => {
         "Admin dashboard with analytics",
         "Property listing management",
         "Image gallery with multiple uploads",
-        "Enquiry management system"
-      ]
+        "OTP wise user authentication",
+        "testimonial management",
+        "Enquiry management system and emails communication",
+      ],
     },
     {
       title: "Job Portal",
       description: "Job search, admin stats, employer panel",
-      longDescription: "An end-to-end job search platform with powerful search functionality, detailed analytics dashboard for administrators, and a dedicated employer panel. Features include job posting management, applicant tracking, and automated application processing.",
+      longDescription:
+        "An end-to-end job search platform with powerful search functionality, detailed analytics dashboard for administrators, and a dedicated employer panel. Features include job posting management, applicant tracking, and automated application processing.",
       image: "/projects/job-portal.png",
       technologies: [
         { name: "ASP.NET MVC", color: "#512BD4" },
+        { name: "csHtml", color: "#E34C26" },
+        { name: "CSS", color: "#264DE4" },
+        { name: "JavaScript", color: "#F0DB4F" },
+        { name: "Bootstrap", color: "#7952B3" },
         { name: "C#", color: "#239120" },
-        { name: "SQL Server", color: "#CC2927" }
+        { name: "SQL Server", color: "#CC2927" },
       ],
       category: "asp",
       github: "https://github.com/dixitvaghela11/job-portal",
       features: [
+        "job seeker and employer authentication and authorization",
         "Advanced job search and filtering",
         "Employer dashboard",
+        "Job seeker dashboard",
         "Application tracking system",
         "Resume parser",
         "Email notifications",
-        "Analytics dashboard"
-      ]
+        "Chat between employer and job seeker",
+      ],
     },
     {
       title: "Online Shopping System",
+      category: "php",
       description: "Cart, checkout, order management",
-      longDescription: "Feature-rich e-commerce platform with seamless cart management, secure checkout process, and comprehensive order tracking. Includes inventory management, user reviews, and automated order processing capabilities.",
+      longDescription:
+        "A feature-rich e-commerce platform that provides a seamless shopping experience through efficient cart management, a secure checkout system, and robust order tracking. This system also includes inventory management, customer reviews, automated order processing, and coupon-based discount functionality. It’s built with a mobile-responsive interface using Bootstrap and JavaScript, and a strong backend powered by PHP and MySQL.",
       image: "/projects/online-shopping.png",
       technologies: [
-        { name: "PHP", color: "#777BB3" },
-        { name: "MySQL", color: "#4479A1" }
+        { name: "PHP (Core)", color: "#8892BF" },
+        { name: "HTML", color: "#E34C26" },
+        { name: "CSS", color: "#264DE4" },
+        { name: "JavaScript", color: "#F0DB4F" },
+        { name: "Bootstrap", color: "#7952B3" },
+        { name: "MySQL", color: "#4479A1" },
       ],
-      category: "php",
-      github: "https://github.com/dixitvaghela11/online-shopping",
       features: [
         "Shopping cart management",
-        "Secure payment gateway",
         "Order tracking system",
+        "Product category and sub category wise filter",
         "Product reviews",
+        "Coupon-wise discount",
         "Inventory management",
-        "User wishlist"
-      ]
+        "Razorpay integration",
+        "User wishlist",
+      ],
+      github: "https://github.com/dixitvaghela11/online-shopping",
     },
     {
       title: "OPD Assessment System",
       description: "Patient record tracking, OPD data efficiency",
-      longDescription: "Advanced patient management system for outpatient departments, featuring efficient record tracking, appointment scheduling, and data analysis tools. Improves healthcare delivery through streamlined workflows and accurate patient data management.",
-      image: "/projects/opd-assessment.png",
+      longDescription:
+        "Advanced patient management system for outpatient departments, featuring efficient record tracking, appointment scheduling, and data analysis tools. Improves healthcare delivery through streamlined workflows and accurate patient data management.",
+      image: "/projects/opd-assessment-light.png",
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
-        { name: "MySQL", color: "#4479A1" }
+        { name: "React", color: "#61DAFB" },
+        { name: "Taliwand CSS", color: "#264DE4" },
+        { name: "JavaScript", color: "#F0DB4F" },
+        { name: "Bootstrap", color: "#7952B3" },
+        { name: "MySQL", color: "#4479A1" },
       ],
       category: "laravel",
-      github: "https://github.com/dixitvaghela11",
+      // github: "https://github.com/dixitvaghela11",
       features: [
         "Patient record management",
-        "Appointment scheduling",
-        "Medical history tracking",
-        "Prescription management",
-        "Lab test integration",
-        "Billing system"
-      ]
-    },
+        "Cluster wise patient management",
+        "OPD patient minute to minute management",
+        "Data fetching from API",
+        "User authentication and authorization",
+        "Role based access control",
+        "OPD report export in excel and csv",
+      ],
+    }, 
     {
       title: "HR Digitaliz",
       description: "Streamlined onboarding, employee document management",
-      longDescription: "Modern HR management solution that digitizes employee onboarding processes and document management. Includes automated workflow processing, document verification, and secure storage of employee information with role-based access control.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
+      longDescription:
+        "Modern HR management solution that digitizes employee onboarding processes and document management. Includes automated workflow processing, document verification, and secure storage of employee information with role-based access control.",
+      image:
+        "/projects/hr-digitaliz.png",
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
-        { name: "React", color: "#61DAFB" }
+        { name: "React", color: "#61DAFB" },
+        { name: "Taliwand CSS", color: "#264DE4" },
+        { name: "Power BI", color: "#F0DB4F" },
+        { name: "MySQL", color: "#4479A1" },
       ],
       category: "react",
-      github: "https://github.com/dixitvaghela11",
+      // github: "https://github.com/dixitvaghela11",
       features: [
         "Digital document management",
-        "Employee onboarding workflow",
-        "Document verification system",
+        "Employee Master Data Management",
+        "Employee and employer dependent medicare data management",
         "Role-based access control",
-        "Automated notifications",
-        "Document expiry tracking"
-      ]
+        "Candidate onboarding workflow",
+        "Cadidate master data management",
+        "Candidate interview and assessment management",
+        "Candidate Document management",
+      ],
     },
     {
       title: "Dormitory Management System",
       description: "Hospital accommodation tracking, availability filter",
-      longDescription: "Smart accommodation management system for hospitals with real-time availability tracking, automated Management processes, and comprehensive reporting. Features include maintenance scheduling and occupancy optimization.",
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
+      longDescription:
+        "Smart accommodation management system for hospitals with real-time availability tracking, automated Management processes, and comprehensive reporting. Features include maintenance scheduling and occupancy optimization.",
+      image:
+        "/projects/dormitory-management.png",
       technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "MySQL", color: "#4479A1" }
+        { name: "PHP (Core)", color: "#8892BF" },
+        { name: "HTML", color: "#E34C26" },
+        { name: "CSS", color: "#264DE4" },
+        { name: "JavaScript", color: "#F0DB4F" },
+        { name: "Bootstrap", color: "#7952B3" },
+        { name: "MySQL", color: "#4479A1" },
       ],
-      category: "laravel",
-      github: "https://github.com/dixitvaghela11",
+      category: "php",
+      // github: "https://github.com/dixitvaghela11",
       features: [
         "Real-time availability tracking",
         "Automated room Management",
         "Maintenance scheduling",
-        "Occupancy reporting",
-        "Cleaning management",
-        "Resident management"
-      ]
-    }
+        "Occupancy and vacancy reporting",
+        "Extend Occupancy and vacancy reporting",
+        "User authentication and authorization for IPD Department",
+      ],
+    }, 
   ];
 
   const categories = [

@@ -11,7 +11,6 @@ interface BlogPost {
   excerpt: string;
   date: string;
   image: string;
-  platform: string;
   content?: string;
   comingSoon?: boolean;
   author?: string;
@@ -40,9 +39,6 @@ const BlogCard = ({ post, onClick }: { post: BlogPost; onClick: () => void }) =>
             Coming Soon
           </div>
         )}
-        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 text-xs px-2 py-1 bg-white/20 backdrop-blur-sm rounded-full z-20">
-          {post.platform}
-        </div>
       </div>
       <div className="relative z-20 p-4 sm:p-6">
         <h3 className="text-base sm:text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover/blog:text-purple-600 dark:group-hover/blog:text-purple-400 transition-colors">
@@ -145,9 +141,6 @@ const BlogDialog = ({ post, onClose }: { post: BlogPost; onClose: () => void }) 
                 <Calendar size={12} className="mr-1 sm:mr-1.5" />
                 {post.date}
               </time>
-              <span className="px-2 sm:px-2.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
-                {post.platform}
-              </span>
             </div>
           </div>
 
@@ -208,34 +201,31 @@ const BlogsSection = () => {
   };
 
   const blogPosts: BlogPost[] = [
+    // {
+    //   title: "Building HR Digitaliz: A Modern HR Management Solution",
+    //   excerpt: "Deep dive into the architecture and implementation of a comprehensive HR digitalization system.",
+    //   date: "Apr 2025",
+    //   image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070",
+    //   content: "In this comprehensive article, I'll share my experience building HR Digitaliz, a modern HR management solution that revolutionizes employee document management and onboarding processes.\n\nThe system was built using a powerful tech stack including Laravel, React, and MySQL, with Power BI integration for advanced analytics. I'll discuss how we implemented secure document storage, automated workflow processing, and role-based access control.\n\nKey technical challenges included implementing secure document verification, managing complex employee hierarchies, and ensuring data privacy compliance. The article covers our solutions to these challenges and the architectural decisions that enabled scalability.",
+    //   comingSoon: false,
+    //   tags: ["Laravel", "React", "HR Tech", "Digital Transformation"]
+    // },
     {
-      title: "How I Built an OPD System with Laravel",
-      excerpt: "A deep dive into the architecture, database design, and performance optimizations for healthcare systems.",
+      title: "Building HR Digitaliz: A Modern HR Management Solution",
+      excerpt: "Deep dive into the architecture and implementation of a comprehensive HR digitalization system.",
       date: "Apr 2025",
       image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070",
-      platform: "Dev.to",
-      content: "This comprehensive article explores the architecture and implementation of a robust Outpatient Department (OPD) system I built using Laravel. I cover everything from the database design and API architecture to performance optimizations and real-time features.\n\nThe system handles patient registration, appointment scheduling, doctor assignments, medical records, and billing - all within a unified interface. I implemented advanced features like real-time notifications for staff, automated SMS reminders for patients, and extensive reporting capabilities.\n\nOne of the main challenges was ensuring the application could handle high concurrent users with minimal latency. I'll share techniques for optimizing Laravel applications, including effective database indexing, proper caching strategies, and queue-based processing for resource-intensive tasks. The article will also cover how I implemented role-based access control to manage permissions across different types of users.",
+      content: "In this comprehensive article, I'll share my experience building HR Digitaliz, a modern HR management solution that revolutionizes employee document management and onboarding processes.\n\nThe system was built using a powerful tech stack including Laravel, React, and MySQL, with Power BI integration for advanced analytics. I'll discuss how we implemented secure document storage, automated workflow processing, and role-based access control.\n\nKey technical challenges included implementing secure document verification, managing complex employee hierarchies, and ensuring data privacy compliance. The article covers our solutions to these challenges and the architectural decisions that enabled scalability.",
       comingSoon: false,
-      tags: ["Laravel", "Healthcare", "Web Development", "Performance"]
+      tags: ["Laravel", "React", "HR Tech", "Digital Transformation"]
     },
     {
       title: "How I Built an OPD System with Laravel",
       excerpt: "A deep dive into the architecture, database design, and performance optimizations for healthcare systems.",
       date: "Apr 2025",
       image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070",
-      platform: "Dev.to",
       content: "This comprehensive article explores the architecture and implementation of a robust Outpatient Department (OPD) system I built using Laravel. I cover everything from the database design and API architecture to performance optimizations and real-time features.\n\nThe system handles patient registration, appointment scheduling, doctor assignments, medical records, and billing - all within a unified interface. I implemented advanced features like real-time notifications for staff, automated SMS reminders for patients, and extensive reporting capabilities.\n\nOne of the main challenges was ensuring the application could handle high concurrent users with minimal latency. I'll share techniques for optimizing Laravel applications, including effective database indexing, proper caching strategies, and queue-based processing for resource-intensive tasks. The article will also cover how I implemented role-based access control to manage permissions across different types of users.",
       comingSoon: false,
-      tags: ["Laravel", "Healthcare", "Web Development", "Performance"]
-    },
-    {
-      title: "How I Built an OPD System with Laravel",
-      excerpt: "A deep dive into the architecture, database design, and performance optimizations for healthcare systems.",
-      date: "Apr 2025",
-      image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070",
-      platform: "Dev.to",
-      content: "This comprehensive article explores the architecture and implementation of a robust Outpatient Department (OPD) system I built using Laravel. I cover everything from the database design and API architecture to performance optimizations and real-time features.\n\nThe system handles patient registration, appointment scheduling, doctor assignments, medical records, and billing - all within a unified interface. I implemented advanced features like real-time notifications for staff, automated SMS reminders for patients, and extensive reporting capabilities.\n\nOne of the main challenges was ensuring the application could handle high concurrent users with minimal latency. I'll share techniques for optimizing Laravel applications, including effective database indexing, proper caching strategies, and queue-based processing for resource-intensive tasks. The article will also cover how I implemented role-based access control to manage permissions across different types of users.",
-      comingSoon: true,
       tags: ["Laravel", "Healthcare", "Web Development", "Performance"]
     },
     {
@@ -243,18 +233,18 @@ const BlogsSection = () => {
       excerpt: "Comparing the two frameworks based on my experience building similar applications in both.",
       date: "Mar 2025",
       image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2074",
-      platform: "Hashnode",
       content: "After building similar applications with both ASP.NET and Laravel, I wanted to share my insights on how these frameworks compare in real-world scenarios. This article provides a detailed breakdown of their strengths and limitations based on practical experience.\n\nI analyze aspects like development speed, performance characteristics, ecosystem maturity, hosting requirements, and developer experience. The article includes code examples showing how the same functionality is implemented in both frameworks, highlighting the differences in syntax and approach.\n\nA particular focus is given to how each framework handles authentication, ORM capabilities, API development, and frontend integration. I also discuss deployment considerations and how each framework fits into modern development workflows involving containerization and CI/CD pipelines.\n\nWhile not declaring a definitive winner, I provide guidance on which framework might be more suitable for different types of projects and team compositions.",
-      comingSoon: true
+      comingSoon: false,
+      tags: ["Laravel", "ASP.NET", "Web Development", "Performance"]
     },
     {
       title: "Inside a Full Stack Dev's Workflow (React + SQL)",
       excerpt: "My approach to designing, building, and deploying modern web applications with React and SQL.",
       date: "Feb 2025",
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070",
-      platform: "Medium",
       content: "In this article, I break down my step-by-step workflow for building full-stack applications using React on the frontend and SQL databases on the backend. I cover everything from initial project setup to deployment and maintenance.\n\nThe article begins with project planning, including requirements gathering, database schema design, and API planning. I demonstrate how I structure React applications for scalability, with examples of folder organization and component architecture.\n\nOn the backend side, I discuss SQL database optimization, query performance, and how to design effective APIs that connect the frontend to your data. Security considerations are addressed throughout, with practical examples of preventing common vulnerabilities.\n\nThe final sections cover testing strategies, CI/CD setup, and monitoring in production. I share the actual tools I use daily and how they fit together to create an efficient development experience.",
-      comingSoon: true
+      comingSoon: false,
+      tags: ["React", "SQL", "Full Stack Development", "Workflow"]
     }
   ];
 
