@@ -43,7 +43,7 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
               alt={project.title}
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
           </div>
           <CardContent className="p-6 flex-1 flex flex-col justify-between">
             <div>
@@ -350,7 +350,7 @@ const ProjectsSection = () => {
       category: "php",
       description: "Cart, checkout, order management",
       longDescription:
-        "A feature-rich e-commerce platform that provides a seamless shopping experience through efficient cart management, a secure checkout system, and robust order tracking. This system also includes inventory management, customer reviews, automated order processing, and coupon-based discount functionality. It’s built with a mobile-responsive interface using Bootstrap and JavaScript, and a strong backend powered by PHP and MySQL.",
+        "A feature-rich e-commerce platform that provides a seamless shopping experience through efficient cart management, a secure checkout system, and robust order tracking. This system also includes inventory management, customer reviews, automated order processing, and coupon-based discount functionality. It's built with a mobile-responsive interface using Bootstrap and JavaScript, and a strong backend powered by PHP and MySQL.",
       image: "/projects/online-shopping.png",
       technologies: [
         { name: "PHP (Core)", color: "#8892BF" },
