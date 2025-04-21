@@ -32,6 +32,47 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    
+    // First close the mobile menu
+    setIsMenuOpen(false);
+
+    // Add a small delay to ensure the mobile menu is closed before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        // Adjust the offset based on screen size
+        const navHeight = window.innerWidth < 768 ? 80 : 64; // Larger offset for mobile
+        
+        // Get the element's position relative to the viewport
+        const elementPosition = element.getBoundingClientRect().top;
+        
+        // Calculate the final scroll position
+        const offsetPosition = window.pageYOffset + elementPosition - navHeight;
+
+        // Smooth scroll to the element
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 100); // 100ms delay to ensure menu animation is complete
+  };
+
+  useEffect(() => {
+    // Prevent body scroll when mobile menu is open
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
     <motion.nav 
       initial={{ y: -100 }}
@@ -47,9 +88,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     >
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex justify-between items-center h-16">
-          {/* Logo - adjusted with better spacing */}
+          {/* Logo */}
           <motion.a 
-            href="#home" 
+            href="#home"
+            onClick={(e) => handleNavClick(e, 'home')}
             className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 flex-shrink-0"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -57,12 +99,13 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             Dix Vaghela
           </motion.a>
 
-          {/* Desktop navigation - centered and balanced */}
+          {/* Desktop navigation */}
           <div className="hidden md:flex items-center justify-center space-x-1 lg:space-x-2 flex-grow mx-4">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.id}
                 href={`#${item.id}`}
+                onClick={(e) => handleNavClick(e, item.id)}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -89,7 +132,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             ))}
           </div>
 
-          {/* Theme toggle and mobile menu button - aligned right */}
+          {/* Theme toggle and mobile menu button */}
           <div className="flex items-center gap-2 flex-shrink-0">
             <ThemeToggle />
             <motion.button 
@@ -108,18 +151,18 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
         </div>
       </div>
 
-      {/* Mobile menu - improved styling */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className={`md:hidden overflow-hidden ${
+            transition={{ duration: 0.2 }}
+            className={`md:hidden fixed top-16 left-0 right-0 z-50 overflow-hidden ${
               theme === 'light' 
-                ? 'bg-white/95 shadow-md' 
-                : 'bg-gray-900/95 backdrop-blur-lg'
+                ? 'bg-white/95 shadow-md backdrop-blur-md' 
+                : 'bg-gray-900/95 backdrop-blur-md'
             }`}
           >
             <div className="container mx-auto px-4 py-3 max-w-6xl">
@@ -127,9 +170,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 <motion.a
                   key={item.id}
                   href={`#${item.id}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                   className={`block py-3 px-4 rounded-md ${
                     activeSection === item.id
                       ? 'text-purple-500 font-medium bg-purple-50 dark:bg-purple-900/20'
@@ -137,7 +181,6 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                         ? 'text-gray-800 hover:bg-gray-50' 
                         : 'text-gray-300 hover:bg-gray-800/50'
                   } transition-all duration-300`}
-                  onClick={() => setIsMenuOpen(false)}
                   whileHover={{ x: 4 }}
                 >
                   {item.label}

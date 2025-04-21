@@ -43,7 +43,6 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
               alt={project.title}
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
           </div>
           <CardContent className="p-6 flex-1 flex flex-col justify-between">
             <div>
