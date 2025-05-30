@@ -203,6 +203,7 @@ const ProjectModal = ({ project, isOpen, onClose }: {
                 src={project.image} 
                 alt={project.title}
                 className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                onError={e => { e.currentTarget.src = "/projects/placeholder.png"; }}
               />
             </div>
           </div>
@@ -424,6 +425,57 @@ const ProjectsSection = () => {
         "Candidate Document management",
       ],
     },
+    {
+      title: "AI-Based Prescription Reminder",
+      description: "Smart AI system for prescription reminders",
+      longDescription:
+        "An AI-powered prescription reminder system designed for hospitals and clinics. It utilizes intelligent scheduling and notification systems to ensure patients take their medications on time. Features include voice-to-text prescription analysis, automated reminder notifications, patient compliance tracking, and integration with hospital management systems.",
+      image: "/projects/ai-prescription-reminder.png", // You can replace this with the actual image path
+      technologies: [
+        { name: "Laravel", color: "#FF2D20" },
+        { name: "Next JS", color: "#61DAFB" },
+        { name: "Tailwind CSS", color: "#264DE4" },
+        { name: "MySQL", color: "#4479A1" },
+        { name: "OpenAI Whisper", color: "#10A37F" },        // Optional: for medical NLP
+      ],
+      category: "react",
+      // github: "https://github.com/dixitvaghela11/ai-prescription-reminder", // optional
+      features: [
+        "Voice-to-text prescription transcription using OpenAI Whisper",
+        "Smart reminders via SMS, email, and in-app notifications",
+        "Prescription schedule management",
+        "Real-time patient compliance tracking",
+        "Role-based access for doctors, nurses, and patients",
+        "Integration with hospital management systems",
+        "NLP-based medication parsing and validation using BioBERT"
+      ],
+    },
+    
+    {
+      title: "Patient Acuity & Workload-Based Duty Roster",
+      description: "Smart duty roster system based on patient acuity and workload",
+      longDescription:
+        "A dynamic duty roster system designed to enhance hospital staffing efficiency. This system enables the creation and management of duty rosters based on patient acuity levels and real-time staff workload. Features include intelligent shift planning, editing, and viewing tools, along with export options and secure user role management.",
+      image: "/projects/patient-duty-roster.png", // Replace with the correct image path
+      technologies: [
+        { name: "Laravel", color: "#FF2D20" },
+        { name: "React", color: "#61DAFB" },
+        { name: "Tailwind CSS", color: "#264DE4" },
+        { name: "Power BI", color: "#F0DB4F" },
+        { name: "MySQL", color: "#4479A1" }
+      ],
+      category: "php",
+      // github: "https://github.com/dixitvaghela11/patient-duty-roster", // optional
+      features: [
+        "Duty roster generation based on patient acuity and workload",
+        "Shift creation, editing, and deletion",
+        "Calendar-style duty roster view and management",
+        "Secure user authentication and role-based access",
+        "Real-time workload tracking for optimized scheduling",
+        "Export duty rosters in Excel and CSV formats"
+      ]
+    },
+     
     {
       title: "Dormitory Management System",
       description: "Hospital accommodation tracking, availability filter",
