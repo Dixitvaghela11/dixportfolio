@@ -96,7 +96,7 @@ const ContactSection = () => {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
       value: "dixit vaghela",
-      href: "https://linkedin.com/in/dixit-vaghela"
+      href: "https://www.linkedin.com/in/dixneek-vaghela-611588274/"
     }
   ];
 

@@ -96,7 +96,7 @@ const HeroSection = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.linkedin.com/in/dixit-vaghela-b2b9b7249/" 
+                href="https://www.linkedin.com/in/dixneek-vaghela-611588274/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={`${theme === 'light' 

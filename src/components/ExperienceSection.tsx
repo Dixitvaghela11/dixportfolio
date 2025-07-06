@@ -126,9 +126,32 @@ const ExperienceSection = () => {
   
   const experiences = [
     {
+      title: "Freelance Full Stack Developer",
+      company: "Freelance",
+      duration: "May 2025 – Present",
+      responsibilities: [
+        "Interactive calendar integration using DayPilot",
+        "Google Maps for location-based planning",
+        "Multi-step approval workflows",
+        "Role-based access and status tracking",
+        "Calendar-based task creation and rescheduling",
+        "Email notifications for approvals"
+      ],
+      icon: <Building size={16} className="text-[#4B84F2]" />
+    },
+    {
+      title: "Software Engineer",
+      company: "Kiran Hospital",
+      duration: "Jun 2025 – Present",
+      responsibilities: [
+        
+      ],
+      icon: <Building size={16} className="text-[#4B84F2]" />
+    },
+    {
       title: "Full Stack Developer",
       company: "Kiran Hospital",
-      duration: "Dec 2025 – Present",
+      duration: "Dec 2025 – Jun 2025",
       responsibilities: [
         "Built OPD Assessment v2 and HR Digitization",
         "Developed Dormitory System & Acuity-based staff allocation",

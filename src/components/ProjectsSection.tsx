@@ -501,7 +501,33 @@ const ProjectsSection = () => {
         "Extend Occupancy and vacancy reporting",
         "User authentication and authorization for IPD Department",
       ],
-    }, 
+    },
+    {
+      title: "Calendar & Workflow System",
+      description: "Calendar management, Google Maps & approval workflows",
+      longDescription:
+        "A smart scheduling and approval system integrating DayPilot calendar, Google Maps, and workflow automation for enterprise environments. Supports task approvals, location-based planning, and dynamic calendar management.",
+      image: "/projects/calendar-workflow-system.png",
+      technologies: [
+        { name: "Laravel", color: "#FF2D20" },
+        { name: "Vue.js", color: "#61DAFB" },
+        { name: "DayPilot", color: "#1565C0" },
+        { name: "JavaScript", color: "#F0DB4F" },
+        { name: "Google Maps API", color: "#4285F4" },
+        { name: "MySQL", color: "#4479A1" }
+      ],
+      category: "vue",
+      // github: "https://github.com/dixitvaghela11",
+      features: [
+        "Interactive calendar integration using DayPilot",
+        "Google Maps for location-based planning",
+        "Multi-step approval workflows",
+        "Role-based access and status tracking",
+        "Calendar-based task creation and rescheduling",
+        "Email notifications for approvals"
+      ]
+    }
+    
   ];
 
   const categories = [
@@ -509,7 +535,8 @@ const ProjectsSection = () => {
     { id: 'laravel', name: 'Laravel' },
     { id: 'react', name: 'React' },
     { id: 'asp', name: 'ASP.NET' },
-    { id: 'php', name: 'PHP' }
+    { id: 'php', name: 'PHP' },
+    { id: 'vue', name: 'Vue.js' },
   ];
 
   const filteredProjects = activeFilter === 'all' 

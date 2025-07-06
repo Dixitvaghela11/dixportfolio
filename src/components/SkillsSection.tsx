@@ -55,7 +55,7 @@ const SkillsSection = () => {
         { name: "PHP", icon: '/skills/php.svg', proficiency: 88 },
         { name: "Laravel", icon: '/skills/laravel.svg', proficiency: 85 },
         { name: "ASP.NET", icon: '/skills/dotnet.svg', proficiency: 80 },
-        { name: "Node.js", icon: '/skills/nodejs.svg', proficiency: 65 },
+        // { name: "Node.js", icon: '/skills/nodejs.svg', proficiency: 65 },
         // { name: "C#", icon: '/skills/csharp.svg', proficiency: 60 }
       ]
     },
