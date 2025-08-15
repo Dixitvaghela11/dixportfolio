@@ -38,11 +38,15 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
           theme === 'light' ? 'bg-white shadow-lg hover:shadow-xl' : 'glass'
         }`}>
           <div className="h-[280px] relative">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              className="w-full h-full object-cover object-center"
-            />
+            <img
+  src={project.image}
+  alt={project.title}
+  loading="lazy"
+  className="w-full h-full object-cover object-center"
+  onError={(e) => {
+    e.currentTarget.src = "/projects/placeholder.png";
+  }}
+/>
           </div>
           <CardContent className="p-6 flex-1 flex flex-col justify-between">
             <div>
