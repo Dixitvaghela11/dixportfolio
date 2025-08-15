@@ -298,7 +298,7 @@ const ProjectsSection = () => {
       description: "Property listing, filtering, admin panel, user auth",
       longDescription:
         "A comprehensive property management solution featuring advanced property listing capabilities, robust filtering options, secure user authentication, and an intuitive admin panel. The system streamlines property searches and management tasks for both agents and clients.",
-      image: "/projects/realestate-management.png",
+      image: "http://ik.imagekit.io/zxclu0f7q/realestate-management.png?updatedAt=1755231737632",
       technologies: [
         { name: "PHP (Core)", color: "#8892BF" },
         { name: "HTML", color: "#E34C26" },
