@@ -76,6 +76,7 @@ A web-based job board allowing user and recruiter interactions.
 ```bash
 git clone https://github.com/Dixitvaghela11/dixportfolio.git
 cd dixportfolio
-npm install
+npm i
 
 npm run dev
+
