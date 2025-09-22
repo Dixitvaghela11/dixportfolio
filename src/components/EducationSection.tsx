@@ -96,7 +96,7 @@ const EducationSection = () => {
   const { theme } = useTheme();
   const education = [
     {
-      degree: "M.Sc. ICT",
+      degree: "M.Sc. Information and Communication Technology",
       institution: "VNSGU",
       specialization: "Computer Engineering",
       board: "Veer Narmad South Gujarat University",
