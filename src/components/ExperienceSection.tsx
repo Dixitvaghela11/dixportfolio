@@ -140,7 +140,7 @@ const ExperienceSection = () => {
       icon: <Building size={16} className="text-[#4B84F2]" />
     },
     {
-      title: "Full Stack Developer - Intern",
+      title: "Full Stack Developer",
       company: "Kiran Hospital",
       duration: "Dec 2025 – Present",
       responsibilities: [
