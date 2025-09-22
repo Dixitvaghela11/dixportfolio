@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Github, ExternalLink, X } from 'lucide-react';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { useTheme } from "@/components/ThemeProvider";
+import { Button } from "@/components/ui/button";
 
 interface Technology {
   name: string;
@@ -38,15 +39,11 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
           theme === 'light' ? 'bg-white shadow-lg hover:shadow-xl' : 'glass'
         }`}>
           <div className="h-[280px] relative">
-            <img
-  src={project.image}
-  alt={project.title}
-  loading="lazy"
-  className="w-full h-full object-cover object-center"
-  onError={(e) => {
-    e.currentTarget.src = "/projects/placeholder.png";
-  }}
-/>
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="w-full h-full object-cover object-center"
+            />
           </div>
           <CardContent className="p-6 flex-1 flex flex-col justify-between">
             <div>
@@ -290,6 +287,7 @@ const ProjectModal = ({ project, isOpen, onClose }: {
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const { theme } = useTheme();
 
   const projects: Project[] = [
@@ -298,7 +296,7 @@ const ProjectsSection = () => {
       description: "Property listing, filtering, admin panel, user auth",
       longDescription:
         "A comprehensive property management solution featuring advanced property listing capabilities, robust filtering options, secure user authentication, and an intuitive admin panel. The system streamlines property searches and management tasks for both agents and clients.",
-      image: "http://ik.imagekit.io/zxclu0f7q/realestate-management.png?updatedAt=1755231737632",
+      image: "/projects/realestate-management.png",
       technologies: [
         { name: "PHP (Core)", color: "#8892BF" },
         { name: "HTML", color: "#E34C26" },
@@ -326,7 +324,7 @@ const ProjectsSection = () => {
       description: "Job search, admin stats, employer panel",
       longDescription:
         "An end-to-end job search platform with powerful search functionality, detailed analytics dashboard for administrators, and a dedicated employer panel. Features include job posting management, applicant tracking, and automated application processing.",
-      image: "https://ik.imagekit.io/zxclu0f7q/job-portal.png?updatedAt=1755231732747",
+      image: "/projects/job-portal.png",
       technologies: [
         { name: "ASP.NET MVC", color: "#512BD4" },
         { name: "csHtml", color: "#E34C26" },
@@ -355,7 +353,7 @@ const ProjectsSection = () => {
       description: "Cart, checkout, order management",
       longDescription:
         "A feature-rich e-commerce platform that provides a seamless shopping experience through efficient cart management, a secure checkout system, and robust order tracking. This system also includes inventory management, customer reviews, automated order processing, and coupon-based discount functionality. It's built with a mobile-responsive interface using Bootstrap and JavaScript, and a strong backend powered by PHP and MySQL.",
-      image: "https://ik.imagekit.io/zxclu0f7q/online-shopping.png?updatedAt=1755231732754",
+      image: "/projects/online-shopping.png",
       technologies: [
         { name: "PHP (Core)", color: "#8892BF" },
         { name: "HTML", color: "#E34C26" },
@@ -381,7 +379,7 @@ const ProjectsSection = () => {
       description: "Patient record tracking, OPD data efficiency",
       longDescription:
         "Advanced patient management system for outpatient departments, featuring efficient record tracking, appointment scheduling, and data analysis tools. Improves healthcare delivery through streamlined workflows and accurate patient data management.",
-      image: "https://ik.imagekit.io/zxclu0f7q/opd-assessment-light.png?updatedAt=1755231732013",
+      image: "/projects/opd-assessment-light.png",
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
         { name: "React", color: "#61DAFB" },
@@ -408,7 +406,7 @@ const ProjectsSection = () => {
       longDescription:
         "Modern HR management solution that digitizes employee onboarding processes and document management. Includes automated workflow processing, document verification, and secure storage of employee information with role-based access control.",
       image:
-        "https://ik.imagekit.io/zxclu0f7q/hr-digitaliz.png?updatedAt=1755231732275",
+        "/projects/hr-digitaliz.png",
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
         { name: "React", color: "#61DAFB" },
@@ -434,7 +432,7 @@ const ProjectsSection = () => {
       description: "Smart AI system for prescription reminders",
       longDescription:
         "An AI-powered prescription reminder system designed for hospitals and clinics. It utilizes intelligent scheduling and notification systems to ensure patients take their medications on time. Features include voice-to-text prescription analysis, automated reminder notifications, patient compliance tracking, and integration with hospital management systems.",
-      image: "https://ik.imagekit.io/zxclu0f7q/ai-prescription-reminder.png?updatedAt=1755231732599", // You can replace this with the actual image path
+      image: "/projects/ai-prescription-reminder.png", // You can replace this with the actual image path
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
         { name: "Next JS", color: "#61DAFB" },
@@ -460,7 +458,7 @@ const ProjectsSection = () => {
       description: "Smart duty roster system based on patient acuity and workload",
       longDescription:
         "A dynamic duty roster system designed to enhance hospital staffing efficiency. This system enables the creation and management of duty rosters based on patient acuity levels and real-time staff workload. Features include intelligent shift planning, editing, and viewing tools, along with export options and secure user role management.",
-      image: "https://ik.imagekit.io/zxclu0f7q/patient-duty-roster.png?updatedAt=1755231737573", // Replace with the correct image path
+      image: "/projects/patient-duty-roster.png", // Replace with the correct image path
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
         { name: "React", color: "#61DAFB" },
@@ -486,7 +484,7 @@ const ProjectsSection = () => {
       longDescription:
         "Smart accommodation management system for hospitals with real-time availability tracking, automated Management processes, and comprehensive reporting. Features include maintenance scheduling and occupancy optimization.",
       image:
-        "https://ik.imagekit.io/zxclu0f7q/dormitory-management.png?updatedAt=1755231732808",
+        "/projects/dormitory-management.png",
       technologies: [
         { name: "PHP (Core)", color: "#8892BF" },
         { name: "HTML", color: "#E34C26" },
@@ -511,7 +509,7 @@ const ProjectsSection = () => {
       description: "Calendar management, Google Maps & approval workflows",
       longDescription:
         "A smart scheduling and approval system integrating DayPilot calendar, Google Maps, and workflow automation for enterprise environments. Supports task approvals, location-based planning, and dynamic calendar management.",
-      image: "https://ik.imagekit.io/zxclu0f7q/calendar-workflow-system.png?updatedAt=1755231732937",
+      image: "/projects/calendar-workflow-system.png",
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
         { name: "Vue.js", color: "#61DAFB" },
@@ -547,6 +545,9 @@ const ProjectsSection = () => {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
+  // Show only first 6 projects unless "View More" is clicked
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
+
   return (
     <>
       <section id="projects" className={`
@@ -565,7 +566,10 @@ const ProjectsSection = () => {
               {categories.map(category => (
                 <button
                   key={category.id}
-                  onClick={() => setActiveFilter(category.id)}
+                  onClick={() => {
+                    setActiveFilter(category.id);
+                    setShowAll(false); // Reset showAll when filter changes
+                  }}
                   className={`px-4 py-1 rounded-full text-sm transition-all ${
                     activeFilter === category.id
                       ? 'bg-purple-600 text-white'
@@ -579,10 +583,22 @@ const ProjectsSection = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <ProjectCard key={index} project={project} onViewDetails={() => setSelectedProject(project)} />
             ))}
           </div>
+
+          {/* View More Button */}
+          {!showAll && filteredProjects.length > 6 && (
+            <div className="flex justify-center mt-10">
+              <Button 
+                onClick={() => setShowAll(true)}
+                className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
+              >
+                View More Projects
+              </Button>
+            </div>
+          )}
         </div>
       </section>
       {selectedProject && (
