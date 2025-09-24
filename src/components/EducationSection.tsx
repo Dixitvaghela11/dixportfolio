@@ -17,7 +17,7 @@ const EducationItem = ({ degree, institution, specialization, board, duration, g
   const { theme } = useTheme();
   
   return (
-    <Card className={`min-h-[280px] h-auto transition-all duration-300 hover:shadow-lg ${
+    <Card className={`min-h-[100px] h-auto transition-all duration-300 hover:shadow-lg ${
       theme === 'light' 
         ? 'bg-white hover:shadow-gray-200/60' 
         : 'glass hover:neon-glow'
