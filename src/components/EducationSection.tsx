@@ -133,11 +133,12 @@ const EducationSection = () => {
     },
   ];
 
-  return (
-    <section id="education" className={`
-      py-8 sm:py-12 md:py-16 relative
-      ${theme === 'light' ? 'bg-gray-50' : ''}
-    `}>
+return (
+  <section
+    id="education"
+    className={`relative ${theme === 'light' ? 'bg-gray-50' : ''}`}
+  >
+
       <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
