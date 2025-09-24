@@ -129,7 +129,11 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className={py-20 ${theme === 'light' ? 'bg-gray-50' : 'bg-gray-900/30'}}>
+   <section
+  id="skills"
+  className={`py-20${theme === 'light' ? 'bg-gray-50' : 'bg-gray-900/30'}`}
+>
+
 
       <div className="container mx-auto px-4">
         <motion.h2 
