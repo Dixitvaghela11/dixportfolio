@@ -13,6 +13,7 @@ import CustomCursor from "@/components/CustomCursor";
 import { useTheme } from "@/components/ThemeProvider";
 import { AnimatePresence } from "framer-motion";
 import Favicon from '@/components/Favicon';
+import Chatbot from '@/components/Chatbot';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -65,6 +66,7 @@ const Index = () => {
       </AnimatePresence>
 
       <CustomCursor />
+      <Chatbot isVisible={!isLoading} />
 
       <div className={`min-h-screen relative overflow-hidden ${
         theme === 'light' ? 'bg-gray-50 text-gray-800' : 'bg-gray-950 text-white'

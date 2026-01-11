@@ -17,7 +17,7 @@ const EducationItem = ({ degree, institution, specialization, board, duration, g
   const { theme } = useTheme();
   
   return (
-    <Card className={`min-h-[280px] h-auto transition-all duration-300 hover:shadow-lg ${
+    <Card className={`min-h-[100px] h-auto transition-all duration-300 hover:shadow-lg ${
       theme === 'light' 
         ? 'bg-white hover:shadow-gray-200/60' 
         : 'glass hover:neon-glow'
@@ -96,7 +96,7 @@ const EducationSection = () => {
   const { theme } = useTheme();
   const education = [
     {
-      degree: "M.Sc. ICT",
+      degree: "M.Sc. Information and Communication Technology",
       institution: "VNSGU",
       specialization: "Computer Engineering",
       board: "Veer Narmad South Gujarat University",
@@ -133,11 +133,12 @@ const EducationSection = () => {
     },
   ];
 
-  return (
-    <section id="education" className={`
-      py-8 sm:py-12 md:py-16 relative
-      ${theme === 'light' ? 'bg-gray-50' : ''}
-    `}>
+return (
+  <section
+    id="education"
+    className={`relative ${theme === 'light' ? 'bg-gray-50' : ''}`}
+  >
+
       <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">

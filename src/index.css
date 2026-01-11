@@ -128,6 +128,16 @@
   .light .glass {
     @apply bg-white/80 backdrop-blur-lg border border-gray-200 shadow-xl;
   }
+  
+  /* Hero section background for light theme */
+  .light #home {
+    background-color: #f8fafc;
+  }
+  
+  /* Hero section background for dark theme */
+  .dark #home {
+    background-color: #0f172a;
+  }
 }
 
 /* Glassmorphism */
@@ -415,3 +425,143 @@ object {
   pointer-events: none;
 }
 
+/* Chatbot Theme-Aware Styles */
+/* Dark Theme Chatbot */
+.dark [id*="chatbase"],
+.dark [class*="chatbase"],
+.dark [data-chatbase],
+.dark-theme {
+  --chatbot-bg: #1a1a1a !important;
+  --chatbot-text: #ffffff !important;
+  --chatbot-border: #333333 !important;
+  --chatbot-header-bg: #1a1a1a !important;
+  --chatbot-input-bg: #2a2a2a !important;
+  --chatbot-input-text: #ffffff !important;
+  --chatbot-button-bg: #8b5cf6 !important;
+  --chatbot-button-hover: #7c3aed !important;
+}
+
+.dark [id*="chatbase"] [class*="header"],
+.dark [class*="chatbase"] [class*="header"],
+.dark [id*="chatbase"] iframe,
+.dark [class*="chatbase"] iframe {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+
+.dark [id*="chatbase"] [class*="content"],
+.dark [class*="chatbase"] [class*="content"] {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.dark [id*="chatbase"] input,
+.dark [class*="chatbase"] input,
+.dark [id*="chatbase"] textarea,
+.dark [class*="chatbase"] textarea {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+
+.dark [id*="chatbase"] button:not([class*="trigger"]),
+.dark [class*="chatbase"] button:not([class*="trigger"]) {
+  background-color: #8b5cf6 !important;
+  color: #ffffff !important;
+}
+
+.dark [id*="chatbase"] button:not([class*="trigger"]):hover,
+.dark [class*="chatbase"] button:not([class*="trigger"]):hover {
+  background-color: #7c3aed !important;
+}
+
+/* Light Theme Chatbot */
+.light [id*="chatbase"],
+.light [class*="chatbase"],
+.light [data-chatbase],
+.light-theme {
+  --chatbot-bg: #ffffff !important;
+  --chatbot-text: #1a1a1a !important;
+  --chatbot-border: #e5e5e5 !important;
+  --chatbot-header-bg: #ffffff !important;
+  --chatbot-input-bg: #f5f5f5 !important;
+  --chatbot-input-text: #1a1a1a !important;
+  --chatbot-button-bg: #8b5cf6 !important;
+  --chatbot-button-hover: #7c3aed !important;
+}
+
+.light [id*="chatbase"] [class*="header"],
+.light [class*="chatbase"] [class*="header"],
+.light [id*="chatbase"] iframe,
+.light [class*="chatbase"] iframe {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border-color: #e5e5e5 !important;
+}
+
+.light [id*="chatbase"] [class*="content"],
+.light [class*="chatbase"] [class*="content"] {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+.light [id*="chatbase"] input,
+.light [class*="chatbase"] input,
+.light [id*="chatbase"] textarea,
+.light [class*="chatbase"] textarea {
+  background-color: #f5f5f5 !important;
+  color: #1a1a1a !important;
+  border-color: #e5e5e5 !important;
+}
+
+.light [id*="chatbase"] button:not([class*="trigger"]),
+.light [class*="chatbase"] button:not([class*="trigger"]) {
+  background-color: #8b5cf6 !important;
+  color: #ffffff !important;
+}
+
+.light [id*="chatbase"] button:not([class*="trigger"]):hover,
+.light [class*="chatbase"] button:not([class*="trigger"]):hover {
+  background-color: #7c3aed !important;
+}
+
+/* Hide all history, reset, and recent chat elements */
+[id*="chatbase"] [class*="history"],
+[class*="chatbase"] [class*="history"],
+[id*="chatbase"] [class*="recent"],
+[class*="chatbase"] [class*="recent"],
+[id*="chatbase"] [id*="history"],
+[class*="chatbase"] [id*="history"],
+[id*="chatbase"] [id*="recent"],
+[class*="chatbase"] [id*="recent"],
+[id*="chatbase"] [class*="reset"],
+[class*="chatbase"] [class*="reset"],
+[id*="chatbase"] [class*="clear"],
+[class*="chatbase"] [class*="clear"],
+[id*="chatbase"] [data-testid*="history"],
+[class*="chatbase"] [data-testid*="history"],
+[id*="chatbase"] [data-testid*="recent"],
+[class*="chatbase"] [data-testid*="recent"],
+[id*="chatbase"] [aria-label*="recent"],
+[class*="chatbase"] [aria-label*="recent"],
+[id*="chatbase"] [aria-label*="history"],
+[class*="chatbase"] [aria-label*="history"],
+[id*="chatbase"] [aria-label*="Reset"],
+[class*="chatbase"] [aria-label*="Reset"],
+[id*="chatbase"] [aria-label*="reset"],
+[class*="chatbase"] [aria-label*="reset"],
+[id*="chatbase"] [title*="history"],
+[class*="chatbase"] [title*="history"],
+[id*="chatbase"] [title*="recent"],
+[class*="chatbase"] [title*="recent"],
+[id*="chatbase"] [title*="reset"],
+[class*="chatbase"] [title*="reset"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}

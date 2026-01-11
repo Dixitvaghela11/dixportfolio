@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Github, ExternalLink, X } from 'lucide-react';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { useTheme } from "@/components/ThemeProvider";
+import { Button } from "@/components/ui/button";
 
 interface Technology {
   name: string;
@@ -286,6 +287,7 @@ const ProjectModal = ({ project, isOpen, onClose }: {
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const { theme } = useTheme();
 
   const projects: Project[] = [
@@ -543,6 +545,24 @@ const ProjectsSection = () => {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
+  // Show 6 projects on desktop, 3 on mobile/tablet unless "View More" is clicked
+  const displayedProjects = showAll 
+    ? filteredProjects 
+    : filteredProjects.slice(0, window.innerWidth < 768 ? 3 : 6);
+
+  // Handle window resize to adjust number of projects shown
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (!showAll) {
+        // This will trigger a re-render when the window is resized
+        setShowAll(prev => prev);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [showAll]);
+
   return (
     <>
       <section id="projects" className={`
@@ -561,7 +581,10 @@ const ProjectsSection = () => {
               {categories.map(category => (
                 <button
                   key={category.id}
-                  onClick={() => setActiveFilter(category.id)}
+                  onClick={() => {
+                    setActiveFilter(category.id);
+                    setShowAll(false); // Reset showAll when filter changes
+                  }}
                   className={`px-4 py-1 rounded-full text-sm transition-all ${
                     activeFilter === category.id
                       ? 'bg-purple-600 text-white'
@@ -575,10 +598,22 @@ const ProjectsSection = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <ProjectCard key={index} project={project} onViewDetails={() => setSelectedProject(project)} />
             ))}
           </div>
+
+          {/* View More Button */}
+          {!showAll && filteredProjects.length > (window.innerWidth < 768 ? 3 : 6) && (
+            <div className="flex justify-center mt-10">
+              <Button 
+                onClick={() => setShowAll(true)}
+                className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
+              >
+                View More Projects
+              </Button>
+            </div>
+          )}
         </div>
       </section>
       {selectedProject && (

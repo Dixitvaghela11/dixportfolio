@@ -140,18 +140,9 @@ const ExperienceSection = () => {
       icon: <Building size={16} className="text-[#4B84F2]" />
     },
     {
-      title: "Software Engineer",
-      company: "Kiran Hospital",
-      duration: "Jun 2025 – Present",
-      responsibilities: [
-        
-      ],
-      icon: <Building size={16} className="text-[#4B84F2]" />
-    },
-    {
       title: "Full Stack Developer",
       company: "Kiran Hospital",
-      duration: "Dec 2025 – Jun 2025",
+      duration: "Dec 2025 – Present",
       responsibilities: [
         "Built OPD Assessment v2 and HR Digitization",
         "Developed Dormitory System & Acuity-based staff allocation",
