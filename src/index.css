@@ -131,12 +131,12 @@
   
   /* Hero section background for light theme */
   .light #home {
-    background-color: #f8fafc;
+    background-color: #f9fafb; /* bg-gray-50 equivalent */
   }
   
-  /* Hero section background for dark theme */
+  /* Hero section background for dark theme - transparent to show StarfieldBackground animation */
   .dark #home {
-    background-color: #0f172a;
+    background-color: transparent;
   }
 }
 

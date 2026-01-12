@@ -129,7 +129,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className={`py-20 ${theme === 'light' ? 'bg-gray-50' : 'bg-gray-900/30'}`}>
+    <section id="skills" className={`py-20 ${theme === 'light' ? 'bg-gray-50' : ''}`}>
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
@@ -204,6 +204,8 @@ const SkillsSection = () => {
         {/* Mobile Optimization */}
         <div className="mt-12 md:hidden">
           <select 
+            aria-label="Select a skill category"
+            title="Select a skill category"
             className={`w-full p-3 rounded-lg ${
               theme === 'light' 
                 ? 'bg-white border border-gray-200' 

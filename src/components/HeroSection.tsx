@@ -10,7 +10,7 @@ const HeroSection = () => {
   const { theme } = useTheme();
   
   return (
-    <section id="home" className="relative min-h-screen flex items-center py-8 pt-32 pb-0">
+    <section id="home" className={`relative min-h-screen flex items-center py-8 pt-32 pb-0 ${theme === 'light' ? 'bg-gray-50' : ''}`}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto">
           {/* Left content column - adjusted width and alignment */}
