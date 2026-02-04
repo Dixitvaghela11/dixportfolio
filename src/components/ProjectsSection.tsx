@@ -427,31 +427,31 @@ const ProjectsSection = () => {
         "Candidate Document management",
       ],
     },
-    {
-      title: "AI-Based Prescription Reminder",
-      description: "Smart AI system for prescription reminders",
-      longDescription:
-        "An AI-powered prescription reminder system designed for hospitals and clinics. It utilizes intelligent scheduling and notification systems to ensure patients take their medications on time. Features include voice-to-text prescription analysis, automated reminder notifications, patient compliance tracking, and integration with hospital management systems.",
-      image: "/projects/ai-prescription-reminder.png", // You can replace this with the actual image path
-      technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "Next JS", color: "#61DAFB" },
-        { name: "Tailwind CSS", color: "#264DE4" },
-        { name: "MySQL", color: "#4479A1" },
-        { name: "OpenAI Whisper", color: "#10A37F" },        // Optional: for medical NLP
-      ],
-      category: "react",
-      // github: "https://github.com/dixitvaghela11/ai-prescription-reminder", // optional
-      features: [
-        "Voice-to-text prescription transcription using OpenAI Whisper",
-        "Smart reminders via SMS, email, and in-app notifications",
-        "Prescription schedule management",
-        "Real-time patient compliance tracking",
-        "Role-based access for doctors, nurses, and patients",
-        "Integration with hospital management systems",
-        "NLP-based medication parsing and validation using BioBERT"
-      ],
-    },
+    // {
+    //   title: "AI-Based Prescription Reminder",
+    //   description: "Smart AI system for prescription reminders",
+    //   longDescription:
+    //     "An AI-powered prescription reminder system designed for hospitals and clinics. It utilizes intelligent scheduling and notification systems to ensure patients take their medications on time. Features include voice-to-text prescription analysis, automated reminder notifications, patient compliance tracking, and integration with hospital management systems.",
+    //   image: "/projects/ai-prescription-reminder.png", // You can replace this with the actual image path
+    //   technologies: [
+    //     { name: "Laravel", color: "#FF2D20" },
+    //     { name: "Next JS", color: "#61DAFB" },
+    //     { name: "Tailwind CSS", color: "#264DE4" },
+    //     { name: "MySQL", color: "#4479A1" },
+    //     { name: "OpenAI Whisper", color: "#10A37F" },        // Optional: for medical NLP
+    //   ],
+    //   category: "react",
+    //   // github: "https://github.com/dixitvaghela11/ai-prescription-reminder", // optional
+    //   features: [
+    //     "Voice-to-text prescription transcription using OpenAI Whisper",
+    //     "Smart reminders via SMS, email, and in-app notifications",
+    //     "Prescription schedule management",
+    //     "Real-time patient compliance tracking",
+    //     "Role-based access for doctors, nurses, and patients",
+    //     "Integration with hospital management systems",
+    //     "NLP-based medication parsing and validation using BioBERT"
+    //   ],
+    // },
     
     {
       title: "Patient Acuity & Workload-Based Duty Roster",
@@ -528,8 +528,64 @@ const ProjectsSection = () => {
         "Calendar-based task creation and rescheduling",
         "Email notifications for approvals"
       ]
-    }
-    
+    },
+    {
+  title: "Senior Citizen Portal",
+  description: "Healthcare services, emergency support & tracking for senior citizens",
+  longDescription:
+    "A centralized digital portal designed for senior citizens to manage healthcare services, emergency assistance, and daily activity tracking. The system provides real-time support features such as emergency alerts, caregiver coordination, medical records access, and location tracking through API integrations. Built with a user-friendly interface to ensure ease of use for elderly users and administrators.",
+  image: "/projects/senior-citizen-portal.png",
+  technologies: [
+    { name: "PHP (Core)", color: "#8892BF" },
+    { name: "HTML", color: "#E34C26" },
+    { name: "CSS", color: "#264DE4" },
+    { name: "JavaScript", color: "#F0DB4F" },
+    { name: "Bootstrap", color: "#7952B3" },
+    { name: "REST API", color: "#6C757D" },
+    { name: "MySQL", color: "#4479A1" }
+  ],
+  category: "php",
+  // github: "https://github.com/dixitvaghela11/senior-citizen-portal", // optional
+  features: [
+    "Senior citizen registration and profile management",
+    "Emergency SOS alert system",
+    "Caregiver and family member access",
+    "Medical history and document management",
+    "Location tracking using API integration",
+    "Notification system via SMS / Email",
+    "Role-based access for admin, caregiver, and senior users",
+    "Mobile-friendly and easy-to-use interface"
+  ]
+},
+{
+  title: "GmailATI – Bulk Email Sending System",
+  description: "Bulk email campaigns, SMTP integration & delivery tracking",
+  longDescription:
+    "GmailATI is a bulk email sending and campaign management system designed for businesses and marketing teams. It enables users to send large-scale email campaigns using SMTP, manage contact lists, design email templates, and track delivery performance. The system ensures secure email delivery, supports scheduling, and provides insights into campaign effectiveness.",
+  image: "/projects/gmailati-bulk-email.png",
+  technologies: [
+    { name: "PHP (Core)", color: "#8892BF" },
+    { name: "HTML", color: "#E34C26" },
+    { name: "CSS", color: "#264DE4" },
+    { name: "JavaScript", color: "#F0DB4F" },
+    { name: "Bootstrap", color: "#7952B3" },
+    { name: "SMTP (Gmail)", color: "#EA4335" },
+    { name: "MySQL", color: "#4479A1" }
+  ],
+  category: "php",
+  // github: "https://github.com/dixitvaghela11/gmailati", // optional
+  features: [
+    "Bulk email sending using SMTP",
+    "Gmail SMTP configuration and authentication",
+    "Email template management",
+    "Contact list and group management",
+    "Scheduled email campaigns",
+    "Email delivery status tracking",
+    "Admin dashboard for campaign monitoring",
+    "Spam-safe email formatting support"
+  ]
+}
+
   ];
 
   const categories = [
