@@ -533,63 +533,162 @@ const ProjectsSection = () => {
       ],
       github: "https://github.com/dixitvaghela11/online-shopping",
     },
+    {
+      title: "OPD Assessment System",
+      description: "Patient record tracking, OPD data efficiency",
+      longDescription:
+        "Advanced patient management system for outpatient departments, featuring efficient record tracking, appointment scheduling, and data analysis tools. Improves healthcare delivery through streamlined workflows and accurate patient data management.",
+      image: "/projects/opd-assessment-light.png",
+      technologies: [
+        { name: "Laravel", color: "#FF2D20" },
+        { name: "React", color: "#61DAFB" },
+        { name: "Taliwand CSS", color: "#264DE4" },
+        { name: "JavaScript", color: "#F0DB4F" },
+        { name: "Bootstrap", color: "#7952B3" },
+        { name: "MySQL", color: "#4479A1" },
+      ],
+      category: "laravel",
+      // github: "https://github.com/dixitvaghela11",
+      features: [
+        "Patient record management",
+        "Cluster wise patient management",
+        "OPD patient minute to minute management",
+        "Data fetching from API",
+        "User authentication and authorization",
+        "Role based access control",
+        "OPD report export in excel and csv",
+      ],
+    }, 
+    {
+      title: "HR Digitaliz",
+      description: "Streamlined onboarding, employee document management",
+      longDescription:
+        "Modern HR management solution that digitizes employee onboarding processes and document management. Includes automated workflow processing, document verification, and secure storage of employee information with role-based access control.",
+      image:
+        "/projects/hr-digitaliz.png",
+      technologies: [
+        { name: "Laravel", color: "#FF2D20" },
+        { name: "React", color: "#61DAFB" },
+        { name: "Taliwand CSS", color: "#264DE4" },
+        { name: "Power BI", color: "#F0DB4F" },
+        { name: "MySQL", color: "#4479A1" },
+      ],
+      category: "react",
+      // github: "https://github.com/dixitvaghela11",
+      features: [
+        "Digital document management",
+        "Employee Master Data Management",
+        "Employee and employer dependent medicare data management",
+        "Role-based access control",
+        "Candidate onboarding workflow",
+        "Cadidate master data management",
+        "Candidate interview and assessment management",
+        "Candidate Document management",
+      ],
+    },
+    {
+      title: "AI-Based Prescription Reminder",
+      description: "Smart AI system for prescription reminders",
+      longDescription:
+        "An AI-powered prescription reminder system designed for hospitals and clinics. It utilizes intelligent scheduling and notification systems to ensure patients take their medications on time. Features include voice-to-text prescription analysis, automated reminder notifications, patient compliance tracking, and integration with hospital management systems.",
+      image: "/projects/ai-prescription-reminder.png", // You can replace this with the actual image path
+      technologies: [
+        { name: "Laravel", color: "#FF2D20" },
+        { name: "Next JS", color: "#61DAFB" },
+        { name: "Tailwind CSS", color: "#264DE4" },
+        { name: "MySQL", color: "#4479A1" },
+        { name: "OpenAI Whisper", color: "#10A37F" },        // Optional: for medical NLP
+      ],
+      category: "react",
+      // github: "https://github.com/dixitvaghela11/ai-prescription-reminder", // optional
+      features: [
+        "Voice-to-text prescription transcription using OpenAI Whisper",
+        "Smart reminders via SMS, email, and in-app notifications",
+        "Prescription schedule management",
+        "Real-time patient compliance tracking",
+        "Role-based access for doctors, nurses, and patients",
+        "Integration with hospital management systems",
+        "NLP-based medication parsing and validation using BioBERT"
+      ],
+    },
     
-    // {
-    //   title: "AI-Based Prescription Reminder",
-    //   description: "Smart AI system for prescription reminders",
-    //   longDescription:
-    //     "An AI-powered prescription reminder system designed for hospitals and clinics. It utilizes intelligent scheduling and notification systems to ensure patients take their medications on time. Features include voice-to-text prescription analysis, automated reminder notifications, patient compliance tracking, and integration with hospital management systems.",
-    //   image: "/projects/ai-prescription-reminder.png", // You can replace this with the actual image path
-    //   technologies: [
-    //     { name: "Laravel", color: "#FF2D20" },
-    //     { name: "Next JS", color: "#61DAFB" },
-    //     { name: "Tailwind CSS", color: "#264DE4" },
-    //     { name: "MySQL", color: "#4479A1" },
-    //     { name: "OpenAI Whisper", color: "#10A37F" },        // Optional: for medical NLP
-    //   ],
-    //   category: "react",
-    //   // github: "https://github.com/dixitvaghela11/ai-prescription-reminder", // optional
-    //   features: [
-    //     "Voice-to-text prescription transcription using OpenAI Whisper",
-    //     "Smart reminders via SMS, email, and in-app notifications",
-    //     "Prescription schedule management",
-    //     "Real-time patient compliance tracking",
-    //     "Role-based access for doctors, nurses, and patients",
-    //     "Integration with hospital management systems",
-    //     "NLP-based medication parsing and validation using BioBERT"
-    //   ],
-    // },
+    {
+      title: "Patient Acuity & Workload-Based Duty Roster",
+      description: "Smart duty roster system based on patient acuity and workload",
+      longDescription:
+        "A dynamic duty roster system designed to enhance hospital staffing efficiency. This system enables the creation and management of duty rosters based on patient acuity levels and real-time staff workload. Features include intelligent shift planning, editing, and viewing tools, along with export options and secure user role management.",
+      image: "/projects/patient-duty-roster.png", // Replace with the correct image path
+      technologies: [
+        { name: "Laravel", color: "#FF2D20" },
+        { name: "React", color: "#61DAFB" },
+        { name: "Tailwind CSS", color: "#264DE4" },
+        { name: "Power BI", color: "#F0DB4F" },
+        { name: "MySQL", color: "#4479A1" }
+      ],
+      category: "php",
+      // github: "https://github.com/dixitvaghela11/patient-duty-roster", // optional
+      features: [
+        "Duty roster generation based on patient acuity and workload",
+        "Shift creation, editing, and deletion",
+        "Calendar-style duty roster view and management",
+        "Secure user authentication and role-based access",
+        "Real-time workload tracking for optimized scheduling",
+        "Export duty rosters in Excel and CSV formats"
+      ]
+    },
+     
+    {
+      title: "Dormitory Management System",
+      description: "Hospital accommodation tracking, availability filter",
+      longDescription:
+        "Smart accommodation management system for hospitals with real-time availability tracking, automated Management processes, and comprehensive reporting. Features include maintenance scheduling and occupancy optimization.",
+      image:
+        "/projects/dormitory-management.png",
+      technologies: [
+        { name: "PHP (Core)", color: "#8892BF" },
+        { name: "HTML", color: "#E34C26" },
+        { name: "CSS", color: "#264DE4" },
+        { name: "JavaScript", color: "#F0DB4F" },
+        { name: "Bootstrap", color: "#7952B3" },
+        { name: "MySQL", color: "#4479A1" },
+      ],
+      category: "php",
+      // github: "https://github.com/dixitvaghela11",
+      features: [
+        "Real-time availability tracking",
+        "Automated room Management",
+        "Maintenance scheduling",
+        "Occupancy and vacancy reporting",
+        "Extend Occupancy and vacancy reporting",
+        "User authentication and authorization for IPD Department",
+      ],
+    },
+    {
+      title: "Calendar & Workflow System",
+      description: "Calendar management, Google Maps & approval workflows",
+      longDescription:
+        "A smart scheduling and approval system integrating DayPilot calendar, Google Maps, and workflow automation for enterprise environments. Supports task approvals, location-based planning, and dynamic calendar management.",
+      image: "/projects/calendar-workflow-system.png",
+      technologies: [
+        { name: "Laravel", color: "#FF2D20" },
+        { name: "Vue.js", color: "#61DAFB" },
+        { name: "DayPilot", color: "#1565C0" },
+        { name: "JavaScript", color: "#F0DB4F" },
+        { name: "Google Maps API", color: "#4285F4" },
+        { name: "MySQL", color: "#4479A1" }
+      ],
+      category: "vue",
+      // github: "https://github.com/dixitvaghela11",
+      features: [
+        "Interactive calendar integration using DayPilot",
+        "Google Maps for location-based planning",
+        "Multi-step approval workflows",
+        "Role-based access and status tracking",
+        "Calendar-based task creation and rescheduling",
+        "Email notifications for approvals"
+      ]
+    }
     
-   
-{
-  title: "GmailATI – Bulk Email Sending System",
-  description: "Bulk email campaigns, SMTP integration & delivery tracking",
-  longDescription:
-    "GmailATI is a bulk email sending and campaign management system designed for businesses and marketing teams. It enables users to send large-scale email campaigns using SMTP, manage contact lists, design email templates, and track delivery performance. The system ensures secure email delivery, supports scheduling, and provides insights into campaign effectiveness.",
-  image: "/projects/gmailati-bulk-email.png",
-  technologies: [
-    { name: "PHP (Core)", color: "#8892BF" },
-    { name: "HTML", color: "#E34C26" },
-    { name: "CSS", color: "#264DE4" },
-    { name: "JavaScript", color: "#F0DB4F" },
-    { name: "Bootstrap", color: "#7952B3" },
-    { name: "SMTP (Gmail)", color: "#EA4335" },
-    { name: "MySQL", color: "#4479A1" }
-  ],
-  category: "php",
-  // github: "https://github.com/dixitvaghela11/gmailati", // optional
-  features: [
-    "Bulk email sending using SMTP",
-    "Gmail SMTP configuration and authentication",
-    "Email template management",
-    "Contact list and group management",
-    "Scheduled email campaigns",
-    "Email delivery status tracking",
-    "Admin dashboard for campaign monitoring",
-    "Spam-safe email formatting support"
-  ]
-}
-
   ];
 
   const categories = [

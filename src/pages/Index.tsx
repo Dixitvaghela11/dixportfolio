@@ -13,7 +13,7 @@ import CustomCursor from "@/components/CustomCursor";
 import { useTheme } from "@/components/ThemeProvider";
 import { AnimatePresence } from "framer-motion";
 import Favicon from '@/components/Favicon';
-// import Chatbot from '@/components/Chatbot';
+import Chatbot from '@/components/Chatbot';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -25,20 +25,22 @@ const Index = () => {
     const scrollPosition = window.scrollY + 100;
 
     sections.forEach((section) => {
-      const sectionTop = (section as HTMLElement).offsetTop;
+      const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
 
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      if (
+        scrollPosition >= sectionTop &&
+        scrollPosition < sectionTop + sectionHeight
+      ) {
         setActiveSection(section.getAttribute("id") || "home");
       }
     });
   };
 
   useEffect(() => {
-    // Simulate loading time and preload important assets
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Show loading screen for 2 seconds
+    }, 2000);
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
@@ -49,13 +51,8 @@ const Index = () => {
     };
   }, []);
 
-  // Prevent scroll during loading
   useEffect(() => {
-    if (isLoading) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isLoading ? "hidden" : "";
   }, [isLoading]);
 
   return (
@@ -66,14 +63,14 @@ const Index = () => {
       </AnimatePresence>
 
       <CustomCursor />
-      {/* <Chatbot isVisible={!isLoading} /> */}
+      <Chatbot isVisible={!isLoading} />
 
       <div className={`min-h-screen relative overflow-hidden ${
         theme === 'light' ? 'bg-gray-50 text-gray-800' : 'bg-gray-950 text-white'
       } theme-transition`}>
         {theme === 'dark' && <StarfieldBackground />}
         <Navbar activeSection={activeSection} />
-        
+
         <main className="relative z-10 scroll-smooth">
           <HeroSection />
           <ExperienceSection />
