@@ -111,17 +111,6 @@ const Chatbot = ({ isVisible = true }: ChatbotProps) => {
         '[class*="clear"]'
       ];
 
-    // Function to hide history-related elements
-    const hideHistoryElements = () => {
-      // Find all chatbot containers
-      const chatbotSelectors = [
-        '[id*="chatbase"]',
-        '[class*="chatbase"]',
-        '[data-chatbase]',
-        'iframe[src*="chatbase"]',
-        'iframe[src*="embed"]'
-      ];
-
       chatbotSelectors.forEach(containerSelector => {
         const containers = document.querySelectorAll(containerSelector);
         containers.forEach(container => {
