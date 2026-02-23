@@ -526,6 +526,24 @@ object {
   background-color: #7c3aed !important;
 }
 
+/* Hide chatbase bubble button */
+[id*="chatbase"] button[class*="trigger"],
+[class*="chatbase"] button[class*="trigger"],
+[id*="chatbase"] button[class*="bubble"],
+[class*="chatbase"] button[class*="bubble"],
+[id*="chatbase"] > button:first-child,
+[class*="chatbase"] > button:first-child,
+[id*="chatbase-bubble-button"],
+[class*="chatbase-bubble-button"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
 /* Hide all history, reset, and recent chat elements */
 [id*="chatbase"] [class*="history"],
 [class*="chatbase"] [class*="history"],

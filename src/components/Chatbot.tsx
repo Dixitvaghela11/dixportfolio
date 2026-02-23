@@ -21,6 +21,73 @@ const Chatbot = ({ isVisible = true }: ChatbotProps) => {
       });
     }
 
+    // Find all chatbot containers
+    const chatbotSelectors = [
+      '[id*="chatbase"]',
+      '[class*="chatbase"]',
+      '[data-chatbase]',
+      'iframe[src*="chatbase"]',
+      'iframe[src*="embed"]'
+    ];
+
+    // Function to hide bubble button
+    const hideBubbleButton = () => {
+      const bubbleButtonSelectors = [
+        'button[class*="trigger"]',
+        'button[class*="bubble"]',
+        '[id*="chatbase-bubble-button"]',
+        '[class*="chatbase-bubble-button"]',
+        'button:first-child'
+      ];
+
+      chatbotSelectors.forEach(containerSelector => {
+        const containers = document.querySelectorAll(containerSelector);
+        containers.forEach(container => {
+          bubbleButtonSelectors.forEach(selector => {
+            const buttons = container.querySelectorAll(selector);
+            buttons.forEach(button => {
+              const htmlEl = button as HTMLElement;
+              htmlEl.style.display = 'none';
+              htmlEl.style.visibility = 'hidden';
+              htmlEl.style.opacity = '0';
+              htmlEl.style.height = '0';
+              htmlEl.style.width = '0';
+              htmlEl.style.overflow = 'hidden';
+              htmlEl.style.pointerEvents = 'none';
+            });
+          });
+
+          // Also check for direct button children
+          const directButtons = container.querySelectorAll(':scope > button');
+          directButtons.forEach(button => {
+            const htmlEl = button as HTMLElement;
+            htmlEl.style.display = 'none';
+            htmlEl.style.visibility = 'hidden';
+            htmlEl.style.opacity = '0';
+            htmlEl.style.height = '0';
+            htmlEl.style.width = '0';
+            htmlEl.style.overflow = 'hidden';
+            htmlEl.style.pointerEvents = 'none';
+          });
+        });
+      });
+
+      // Also check for buttons outside containers
+      const allBubbleButtons = document.querySelectorAll(
+        '[id*="chatbase-bubble-button"], [class*="chatbase-bubble-button"], [id*="chatbase"] > button, [class*="chatbase"] > button'
+      );
+      allBubbleButtons.forEach(button => {
+        const htmlEl = button as HTMLElement;
+        htmlEl.style.display = 'none';
+        htmlEl.style.visibility = 'hidden';
+        htmlEl.style.opacity = '0';
+        htmlEl.style.height = '0';
+        htmlEl.style.width = '0';
+        htmlEl.style.overflow = 'hidden';
+        htmlEl.style.pointerEvents = 'none';
+      });
+    };
+
     // Function to hide history-related elements
     const hideHistoryElements = () => {
       // Comprehensive selectors for history elements
@@ -44,6 +111,8 @@ const Chatbot = ({ isVisible = true }: ChatbotProps) => {
         '[class*="clear"]'
       ];
 
+    // Function to hide history-related elements
+    const hideHistoryElements = () => {
       // Find all chatbot containers
       const chatbotSelectors = [
         '[id*="chatbase"]',
@@ -162,6 +231,7 @@ const Chatbot = ({ isVisible = true }: ChatbotProps) => {
     // MutationObserver to watch for chatbot elements
     const observer = new MutationObserver(() => {
       setTimeout(() => {
+        hideBubbleButton();
         hideHistoryElements();
         applyThemeStyles();
       }, 100);
@@ -169,6 +239,7 @@ const Chatbot = ({ isVisible = true }: ChatbotProps) => {
 
     // Initial execution
     setTimeout(() => {
+      hideBubbleButton();
       hideHistoryElements();
       applyThemeStyles();
     }, 500);
