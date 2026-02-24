@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     { id: 'education', label: 'Education' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
-    { id: 'blogs', label: 'Blogs' },
+    // { id: 'blogs', label: 'Blogs' },
     { id: 'contact', label: 'Contact' }
   ];
 

@@ -296,7 +296,7 @@ const ProjectsSection = () => {
       description: "Smart duty roster system based on patient acuity and workload",
       longDescription:
         "A dynamic duty roster system designed to enhance hospital staffing efficiency. This system enables the creation and management of duty rosters based on patient acuity levels and real-time staff workload. Features include intelligent shift planning, editing, and viewing tools, along with export options and secure user role management.",
-      image: "/projects/patient-duty-roster.png", // Replace with the correct image path
+      image: "/projects/patient-duty-roster.png",
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
         { name: "React", color: "#61DAFB" },
@@ -305,7 +305,6 @@ const ProjectsSection = () => {
         { name: "MySQL", color: "#4479A1" }
       ],
       category: "php",
-      // github: "https://github.com/dixitvaghela11/patient-duty-roster", // optional
       features: [
         "Duty roster generation based on patient acuity and workload",
         "Shift creation, editing, and deletion",
@@ -315,6 +314,7 @@ const ProjectsSection = () => {
         "Export duty rosters in Excel and CSV formats"
       ]
     },
+  
     {
       title: "OPD Assessment System",
       description: "Patient record tracking, OPD data efficiency",
@@ -327,10 +327,9 @@ const ProjectsSection = () => {
         { name: "Taliwand CSS", color: "#264DE4" },
         { name: "JavaScript", color: "#F0DB4F" },
         { name: "Bootstrap", color: "#7952B3" },
-        { name: "MySQL", color: "#4479A1" },
+        { name: "MySQL", color: "#4479A1" }
       ],
       category: "laravel",
-      // github: "https://github.com/dixitvaghela11",
       features: [
         "Patient record management",
         "Cluster wise patient management",
@@ -338,14 +337,15 @@ const ProjectsSection = () => {
         "Data fetching from API",
         "User authentication and authorization",
         "Role based access control",
-        "OPD report export in excel and csv",
-      ],
-    }, 
+        "OPD report export in excel and csv"
+      ]
+    },
+  
     {
       title: "Senior Citizen Portal",
       description: "Healthcare services, emergency support & tracking for senior citizens",
       longDescription:
-        "A centralized digital portal designed for senior citizens to manage healthcare services, emergency assistance, and daily activity tracking. The system provides real-time support features such as emergency alerts, caregiver coordination, medical records access, and location tracking through API integrations. Built with a user-friendly interface to ensure ease of use for elderly users and administrators.",
+        "A centralized digital portal designed for senior citizens to manage healthcare services, emergency assistance, and daily activity tracking...",
       image: "/projects/Senior citizen registration and profile management.png",
       technologies: [
         { name: "PHP (Core)", color: "#8892BF" },
@@ -357,7 +357,6 @@ const ProjectsSection = () => {
         { name: "MySQL", color: "#4479A1" }
       ],
       category: "php",
-      // github: "https://github.com/dixitvaghela11/senior-citizen-portal", // optional
       features: [
         "Senior citizen registration and profile management",
         "Emergency SOS alert system",
@@ -369,22 +368,21 @@ const ProjectsSection = () => {
         "Mobile-friendly and easy-to-use interface"
       ]
     },
+  
     {
       title: "HR Digitaliz",
       description: "Streamlined onboarding, employee document management",
       longDescription:
-        "Modern HR management solution that digitizes employee onboarding processes and document management. Includes automated workflow processing, document verification, and secure storage of employee information with role-based access control.",
-      image:
-        "/projects/hr-digitaliz.png",
+        "Modern HR management solution that digitizes employee onboarding processes and document management...",
+      image: "/projects/hr-digitaliz.png",
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
         { name: "React", color: "#61DAFB" },
         { name: "Taliwand CSS", color: "#264DE4" },
         { name: "Power BI", color: "#F0DB4F" },
-        { name: "MySQL", color: "#4479A1" },
+        { name: "MySQL", color: "#4479A1" }
       ],
       category: "react",
-      // github: "https://github.com/dixitvaghela11",
       features: [
         "Digital document management",
         "Employee Master Data Management",
@@ -393,53 +391,50 @@ const ProjectsSection = () => {
         "Candidate onboarding workflow",
         "Cadidate master data management",
         "Candidate interview and assessment management",
-        "Candidate Document management",
-      ],
+        "Candidate Document management"
+      ]
     },
-    
-     
+  
     {
       title: "Dormitory Management System",
       description: "Hospital accommodation tracking, availability filter",
       longDescription:
-        "Smart accommodation management system for hospitals with real-time availability tracking, automated Management processes, and comprehensive reporting. Features include maintenance scheduling and occupancy optimization.",
-      image:
-        "/projects/dormitory-management.png",
+        "Smart accommodation management system for hospitals with real-time availability tracking...",
+      image: "/projects/dormitory-management.png",
       technologies: [
         { name: "PHP (Core)", color: "#8892BF" },
         { name: "HTML", color: "#E34C26" },
         { name: "CSS", color: "#264DE4" },
         { name: "JavaScript", color: "#F0DB4F" },
         { name: "Bootstrap", color: "#7952B3" },
-        { name: "MySQL", color: "#4479A1" },
+        { name: "MySQL", color: "#4479A1" }
       ],
       category: "php",
-      // github: "https://github.com/dixitvaghela11",
       features: [
         "Real-time availability tracking",
         "Automated room Management",
         "Maintenance scheduling",
         "Occupancy and vacancy reporting",
         "Extend Occupancy and vacancy reporting",
-        "User authentication and authorization for IPD Department",
-      ],
+        "User authentication and authorization for IPD Department"
+      ]
     },
+  
     {
       title: "Calendar & Workflow System",
       description: "Calendar management, Google Maps & approval workflows",
       longDescription:
-        "A smart scheduling and approval system integrating DayPilot calendar, Google Maps, and workflow automation for enterprise environments. Supports task approvals, location-based planning, and dynamic calendar management.",
+        "A smart scheduling and approval system integrating DayPilot calendar, Google Maps...",
       image: "/projects/calendar-workflow-system.png",
       technologies: [
         { name: "Laravel", color: "#FF2D20" },
-        { name: "Vue.js", color: "#61DAFB" },
+        // { name: "Vue.js", color: "#61DAFB" },
         { name: "DayPilot", color: "#1565C0" },
         { name: "JavaScript", color: "#F0DB4F" },
         { name: "Google Maps API", color: "#4285F4" },
         { name: "MySQL", color: "#4479A1" }
       ],
-      category: "vue",
-      // github: "https://github.com/dixitvaghela11",
+      category: "laravel",
       features: [
         "Interactive calendar integration using DayPilot",
         "Google Maps for location-based planning",
@@ -449,12 +444,12 @@ const ProjectsSection = () => {
         "Email notifications for approvals"
       ]
     },
-    
+  
     {
       title: "Real Estate Management System",
       description: "Property listing, filtering, admin panel, user auth",
       longDescription:
-        "A comprehensive property management solution featuring advanced property listing capabilities, robust filtering options, secure user authentication, and an intuitive admin panel. The system streamlines property searches and management tasks for both agents and clients.",
+        "A comprehensive property management solution featuring advanced property listing capabilities...",
       image: "/projects/realestate-management.png",
       technologies: [
         { name: "PHP (Core)", color: "#8892BF" },
@@ -463,7 +458,7 @@ const ProjectsSection = () => {
         { name: "JavaScript", color: "#F0DB4F" },
         { name: "Bootstrap", color: "#7952B3" },
         { name: "MySQL", color: "#4479A1" },
-        { name: "SMTP Mailer", color: "#6C757D" },
+        { name: "SMTP Mailer", color: "#6C757D" }
       ],
       category: "php",
       github: "https://github.com/dixitvaghela11/realestate-management",
@@ -475,14 +470,15 @@ const ProjectsSection = () => {
         "Image gallery with multiple uploads",
         "OTP wise user authentication",
         "testimonial management",
-        "Enquiry management system and emails communication",
-      ],
+        "Enquiry management system and emails communication"
+      ]
     },
+  
     {
       title: "Job Portal",
       description: "Job search, admin stats, employer panel",
       longDescription:
-        "An end-to-end job search platform with powerful search functionality, detailed analytics dashboard for administrators, and a dedicated employer panel. Features include job posting management, applicant tracking, and automated application processing.",
+        "An end-to-end job search platform with powerful search functionality...",
       image: "/projects/job-portal.png",
       technologies: [
         { name: "ASP.NET MVC", color: "#512BD4" },
@@ -491,7 +487,7 @@ const ProjectsSection = () => {
         { name: "JavaScript", color: "#F0DB4F" },
         { name: "Bootstrap", color: "#7952B3" },
         { name: "C#", color: "#239120" },
-        { name: "SQL Server", color: "#CC2927" },
+        { name: "SQL Server", color: "#CC2927" }
       ],
       category: "asp",
       github: "https://github.com/dixitvaghela11/job-portal",
@@ -503,15 +499,16 @@ const ProjectsSection = () => {
         "Application tracking system",
         "Resume parser",
         "Email notifications",
-        "Chat between employer and job seeker",
-      ],
+        "Chat between employer and job seeker"
+      ]
     },
+  
     {
       title: "Online Shopping System",
       category: "php",
       description: "Cart, checkout, order management",
       longDescription:
-        "A feature-rich e-commerce platform that provides a seamless shopping experience through efficient cart management, a secure checkout system, and robust order tracking. This system also includes inventory management, customer reviews, automated order processing, and coupon-based discount functionality. It's built with a mobile-responsive interface using Bootstrap and JavaScript, and a strong backend powered by PHP and MySQL.",
+        "A feature-rich e-commerce platform that provides a seamless shopping experience...",
       image: "/projects/online-shopping.png",
       technologies: [
         { name: "PHP (Core)", color: "#8892BF" },
@@ -519,8 +516,9 @@ const ProjectsSection = () => {
         { name: "CSS", color: "#264DE4" },
         { name: "JavaScript", color: "#F0DB4F" },
         { name: "Bootstrap", color: "#7952B3" },
-        { name: "MySQL", color: "#4479A1" },
+        { name: "MySQL", color: "#4479A1" }
       ],
+      github: "https://github.com/dixitvaghela11/online-shopping",
       features: [
         "Shopping cart management",
         "Order tracking system",
@@ -529,166 +527,34 @@ const ProjectsSection = () => {
         "Coupon-wise discount",
         "Inventory management",
         "Razorpay integration",
-        "User wishlist",
-      ],
-      github: "https://github.com/dixitvaghela11/online-shopping",
-    },
-    {
-      title: "OPD Assessment System",
-      description: "Patient record tracking, OPD data efficiency",
-      longDescription:
-        "Advanced patient management system for outpatient departments, featuring efficient record tracking, appointment scheduling, and data analysis tools. Improves healthcare delivery through streamlined workflows and accurate patient data management.",
-      image: "/projects/opd-assessment-light.png",
-      technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "React", color: "#61DAFB" },
-        { name: "Taliwand CSS", color: "#264DE4" },
-        { name: "JavaScript", color: "#F0DB4F" },
-        { name: "Bootstrap", color: "#7952B3" },
-        { name: "MySQL", color: "#4479A1" },
-      ],
-      category: "laravel",
-      // github: "https://github.com/dixitvaghela11",
-      features: [
-        "Patient record management",
-        "Cluster wise patient management",
-        "OPD patient minute to minute management",
-        "Data fetching from API",
-        "User authentication and authorization",
-        "Role based access control",
-        "OPD report export in excel and csv",
-      ],
-    }, 
-    {
-      title: "HR Digitaliz",
-      description: "Streamlined onboarding, employee document management",
-      longDescription:
-        "Modern HR management solution that digitizes employee onboarding processes and document management. Includes automated workflow processing, document verification, and secure storage of employee information with role-based access control.",
-      image:
-        "/projects/hr-digitaliz.png",
-      technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "React", color: "#61DAFB" },
-        { name: "Taliwand CSS", color: "#264DE4" },
-        { name: "Power BI", color: "#F0DB4F" },
-        { name: "MySQL", color: "#4479A1" },
-      ],
-      category: "react",
-      // github: "https://github.com/dixitvaghela11",
-      features: [
-        "Digital document management",
-        "Employee Master Data Management",
-        "Employee and employer dependent medicare data management",
-        "Role-based access control",
-        "Candidate onboarding workflow",
-        "Cadidate master data management",
-        "Candidate interview and assessment management",
-        "Candidate Document management",
-      ],
-    },
-    {
-      title: "AI-Based Prescription Reminder",
-      description: "Smart AI system for prescription reminders",
-      longDescription:
-        "An AI-powered prescription reminder system designed for hospitals and clinics. It utilizes intelligent scheduling and notification systems to ensure patients take their medications on time. Features include voice-to-text prescription analysis, automated reminder notifications, patient compliance tracking, and integration with hospital management systems.",
-      image: "/projects/ai-prescription-reminder.png", // You can replace this with the actual image path
-      technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "Next JS", color: "#61DAFB" },
-        { name: "Tailwind CSS", color: "#264DE4" },
-        { name: "MySQL", color: "#4479A1" },
-        { name: "OpenAI Whisper", color: "#10A37F" },        // Optional: for medical NLP
-      ],
-      category: "react",
-      // github: "https://github.com/dixitvaghela11/ai-prescription-reminder", // optional
-      features: [
-        "Voice-to-text prescription transcription using OpenAI Whisper",
-        "Smart reminders via SMS, email, and in-app notifications",
-        "Prescription schedule management",
-        "Real-time patient compliance tracking",
-        "Role-based access for doctors, nurses, and patients",
-        "Integration with hospital management systems",
-        "NLP-based medication parsing and validation using BioBERT"
-      ],
-    },
-    
-    {
-      title: "Patient Acuity & Workload-Based Duty Roster",
-      description: "Smart duty roster system based on patient acuity and workload",
-      longDescription:
-        "A dynamic duty roster system designed to enhance hospital staffing efficiency. This system enables the creation and management of duty rosters based on patient acuity levels and real-time staff workload. Features include intelligent shift planning, editing, and viewing tools, along with export options and secure user role management.",
-      image: "/projects/patient-duty-roster.png", // Replace with the correct image path
-      technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "React", color: "#61DAFB" },
-        { name: "Tailwind CSS", color: "#264DE4" },
-        { name: "Power BI", color: "#F0DB4F" },
-        { name: "MySQL", color: "#4479A1" }
-      ],
-      category: "php",
-      // github: "https://github.com/dixitvaghela11/patient-duty-roster", // optional
-      features: [
-        "Duty roster generation based on patient acuity and workload",
-        "Shift creation, editing, and deletion",
-        "Calendar-style duty roster view and management",
-        "Secure user authentication and role-based access",
-        "Real-time workload tracking for optimized scheduling",
-        "Export duty rosters in Excel and CSV formats"
+        "User wishlist"
       ]
     },
-     
-    {
-      title: "Dormitory Management System",
-      description: "Hospital accommodation tracking, availability filter",
-      longDescription:
-        "Smart accommodation management system for hospitals with real-time availability tracking, automated Management processes, and comprehensive reporting. Features include maintenance scheduling and occupancy optimization.",
-      image:
-        "/projects/dormitory-management.png",
-      technologies: [
-        { name: "PHP (Core)", color: "#8892BF" },
-        { name: "HTML", color: "#E34C26" },
-        { name: "CSS", color: "#264DE4" },
-        { name: "JavaScript", color: "#F0DB4F" },
-        { name: "Bootstrap", color: "#7952B3" },
-        { name: "MySQL", color: "#4479A1" },
-      ],
-      category: "php",
-      // github: "https://github.com/dixitvaghela11",
-      features: [
-        "Real-time availability tracking",
-        "Automated room Management",
-        "Maintenance scheduling",
-        "Occupancy and vacancy reporting",
-        "Extend Occupancy and vacancy reporting",
-        "User authentication and authorization for IPD Department",
-      ],
-    },
-    {
-      title: "Calendar & Workflow System",
-      description: "Calendar management, Google Maps & approval workflows",
-      longDescription:
-        "A smart scheduling and approval system integrating DayPilot calendar, Google Maps, and workflow automation for enterprise environments. Supports task approvals, location-based planning, and dynamic calendar management.",
-      image: "/projects/calendar-workflow-system.png",
-      technologies: [
-        { name: "Laravel", color: "#FF2D20" },
-        { name: "Vue.js", color: "#61DAFB" },
-        { name: "DayPilot", color: "#1565C0" },
-        { name: "JavaScript", color: "#F0DB4F" },
-        { name: "Google Maps API", color: "#4285F4" },
-        { name: "MySQL", color: "#4479A1" }
-      ],
-      category: "vue",
-      // github: "https://github.com/dixitvaghela11",
-      features: [
-        "Interactive calendar integration using DayPilot",
-        "Google Maps for location-based planning",
-        "Multi-step approval workflows",
-        "Role-based access and status tracking",
-        "Calendar-based task creation and rescheduling",
-        "Email notifications for approvals"
-      ]
-    }
-    
+  
+    // {
+    //   title: "AI-Based Prescription Reminder",
+    //   description: "Smart AI system for prescription reminders",
+    //   longDescription:
+    //     "An AI-powered prescription reminder system designed for hospitals and clinics...",
+    //   image: "/projects/ai-prescription-reminder.png",
+    //   technologies: [
+    //     { name: "Laravel", color: "#FF2D20" },
+    //     { name: "Next JS", color: "#61DAFB" },
+    //     { name: "Tailwind CSS", color: "#264DE4" },
+    //     { name: "MySQL", color: "#4479A1" },
+    //     { name: "OpenAI Whisper", color: "#10A37F" }
+    //   ],
+    //   category: "react",
+    //   features: [
+    //     "Voice-to-text prescription transcription using OpenAI Whisper",
+    //     "Smart reminders via SMS, email, and in-app notifications",
+    //     "Prescription schedule management",
+    //     "Real-time patient compliance tracking",
+    //     "Role-based access for doctors, nurses, and patients",
+    //     "Integration with hospital management systems",
+    //     "NLP-based medication parsing and validation using BioBERT"
+    //   ]
+    // }
   ];
 
   const categories = [
@@ -697,7 +563,7 @@ const ProjectsSection = () => {
     { id: 'react', name: 'React' },
     { id: 'asp', name: 'ASP.NET' },
     { id: 'php', name: 'PHP' },
-    { id: 'vue', name: 'Vue.js' },
+    // { id: 'vue', name: 'Vue.js' },
   ];
 
   const filteredProjects = activeFilter === 'all' 

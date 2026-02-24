@@ -128,7 +128,7 @@ const ExperienceSection = () => {
     {
       title: "Freelance Full Stack Developer",
       company: "Freelance",
-      duration: "May 2025 – Present",
+      duration: "May 2025 – June 2025",
       responsibilities: [
         "Interactive calendar integration using DayPilot",
         "Google Maps for location-based planning",

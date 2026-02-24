@@ -22,8 +22,8 @@ const HeroSection = () => {
               <div className="h-16 text-xl lg:text-2xl font-medium dark:text-gray-200 text-gray-800">
                 <TypewriterAnimation
                   strings={[
-                    "Laravel • React Developer",
-                    "ASP.NET Developer",
+                    "Laravel Developer",
+                    "PHP Developer",
                     "Full Stack Developer"
                   ]}
                 />

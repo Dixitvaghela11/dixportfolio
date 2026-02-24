@@ -44,7 +44,7 @@ const SkillsSection = () => {
         { name: "CSS3", icon: '/skills/css.svg', proficiency: 90 },
         { name: "JavaScript", icon: '/skills/javascript.svg', proficiency: 80 },
         { name: "React.js", icon: '/skills/react.svg', proficiency: 85 },
-        { name: "Vue.js", icon: '/skills/vue.svg', proficiency: 70 },
+        // { name: "Vue.js", icon: '/skills/vue.svg', proficiency: 70 },
         { name: "Tailwind CSS", icon: '/skills/tailwind.svg', proficiency: 60 }
       ]
     },
@@ -64,7 +64,7 @@ const SkillsSection = () => {
       icon: <Database className="w-8 h-8 text-blue-500" />,
       skills: [
         { name: "MySQL", icon: '/skills/mysql.svg', proficiency: 90 },
-        { name: "PostgreSQL", icon: '/skills/postgresql.svg', proficiency: 85 },
+        // { name: "PostgreSQL", icon: '/skills/postgresql.svg', proficiency: 85 },
         // { name: "MongoDB", icon: '/skills/mongoDB.svg', proficiency: 75 }
         { name: "Sql Server", icon: '/skills/sqlserver.svg', proficiency: 80 }
       ]
@@ -94,11 +94,11 @@ const SkillsSection = () => {
           icon: '/skills/powerautomate.svg', 
           proficiency: 65 
         },
-        { 
-          name: "Canvas", 
-          icon: '/skills/canva.svg', 
-          proficiency: 85 
-        }
+        // { 
+        //   name: "Canvas", 
+        //   icon: '/skills/canva.svg', 
+        //   proficiency: 85 
+        // }
       ]
     }
   ];
