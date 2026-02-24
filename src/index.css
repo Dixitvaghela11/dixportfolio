@@ -425,6 +425,197 @@ object {
   pointer-events: none;
 }
 
+/* Circuit Background Pattern for Light Theme */
+.circuit-wrapper {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+}
+
+.circuit-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: 
+    /* Small filled rectangles - visible boxes */
+    linear-gradient(
+      rgba(139, 92, 246, 0.06) 3px,
+      transparent 3px,
+      transparent 22px,
+      rgba(139, 92, 246, 0.06) 22px,
+      rgba(139, 92, 246, 0.06) 25px,
+      transparent 25px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0.06) 3px,
+      transparent 3px,
+      transparent 22px,
+      rgba(139, 92, 246, 0.06) 22px,
+      rgba(139, 92, 246, 0.06) 25px,
+      transparent 25px
+    ),
+    /* Grid lines */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(75, 85, 99, 0.08) 19px,
+      rgba(75, 85, 99, 0.08) 20px,
+      transparent 20px,
+      transparent 39px,
+      rgba(75, 85, 99, 0.08) 39px,
+      rgba(75, 85, 99, 0.08) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 19px,
+      rgba(75, 85, 99, 0.08) 19px,
+      rgba(75, 85, 99, 0.08) 20px,
+      transparent 20px,
+      transparent 39px,
+      rgba(75, 85, 99, 0.08) 39px,
+      rgba(75, 85, 99, 0.08) 40px
+    ),
+    /* Dots pattern */
+    radial-gradient(
+      circle at 20px 20px,
+      rgba(55, 65, 81, 0.12) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 40px 40px,
+      rgba(55, 65, 81, 0.12) 2px,
+      transparent 2px
+    );
+  background-size:
+    25px 25px,
+    25px 25px,
+    40px 40px,
+    40px 40px,
+    40px 40px,
+    40px 40px;
+}
+
+/* Small decorative rectangles overlay */
+.circuit-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Small rectangle grid - more visible */
+    linear-gradient(
+      rgba(139, 92, 246, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0.08) 1px,
+      transparent 1px
+    ),
+    /* Rectangle pattern - larger squares with borders */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 23px,
+      rgba(139, 92, 246, 0.06) 23px,
+      rgba(139, 92, 246, 0.06) 25px,
+      transparent 25px,
+      transparent 48px,
+      rgba(59, 130, 246, 0.06) 48px,
+      rgba(59, 130, 246, 0.06) 50px,
+      transparent 50px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 23px,
+      rgba(139, 92, 246, 0.06) 23px,
+      rgba(139, 92, 246, 0.06) 25px,
+      transparent 25px,
+      transparent 48px,
+      rgba(59, 130, 246, 0.06) 48px,
+      rgba(59, 130, 246, 0.06) 50px,
+      transparent 50px
+    );
+  background-size:
+    25px 25px,
+    25px 25px,
+    50px 50px,
+    50px 50px;
+  opacity: 1;
+}
+
+/* Additional rectangle boxes pattern - small filled boxes */
+.circuit-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Small filled rectangle boxes */
+    linear-gradient(
+      to right,
+      rgba(139, 92, 246, 0.08) 1px,
+      transparent 1px,
+      transparent 19px,
+      rgba(139, 92, 246, 0.08) 19px,
+      rgba(139, 92, 246, 0.08) 20px,
+      transparent 20px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(139, 92, 246, 0.08) 1px,
+      transparent 1px,
+      transparent 19px,
+      rgba(139, 92, 246, 0.08) 19px,
+      rgba(139, 92, 246, 0.08) 20px,
+      transparent 20px
+    ),
+    /* Filled small boxes at regular intervals */
+    linear-gradient(
+      to right,
+      transparent 0px,
+      transparent 24px,
+      rgba(59, 130, 246, 0.06) 24px,
+      rgba(59, 130, 246, 0.06) 25px,
+      transparent 25px,
+      transparent 49px,
+      rgba(139, 92, 246, 0.06) 49px,
+      rgba(139, 92, 246, 0.06) 50px,
+      transparent 50px
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 24px,
+      rgba(59, 130, 246, 0.06) 24px,
+      rgba(59, 130, 246, 0.06) 25px,
+      transparent 25px,
+      transparent 49px,
+      rgba(139, 92, 246, 0.06) 49px,
+      rgba(139, 92, 246, 0.06) 50px,
+      transparent 50px
+    );
+  background-size:
+    20px 20px,
+    20px 20px,
+    50px 50px,
+    50px 50px;
+  opacity: 1;
+}
+
 /* Chatbot Theme-Aware Styles */
 /* Dark Theme Chatbot */
 .dark [id*="chatbase"],
@@ -549,10 +740,22 @@ object {
   position: relative;
   width: 300px;
   height: 300px;
+  max-width: 90vw;
+  max-height: 90vw;
   transform-style: preserve-3d;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .svg-frame {
+    width: 250px;
+    height: 250px;
+    max-width: 85vw;
+    max-height: 85vw;
+  }
 }
 
 .svg-frame svg {
@@ -562,7 +765,16 @@ object {
   transform-origin: center;
   width: 344px;
   height: 344px;
+  max-width: 100%;
+  max-height: 100%;
   fill: none;
+}
+
+@media (max-width: 640px) {
+  .svg-frame svg {
+    width: 280px;
+    height: 280px;
+  }
 }
 
 .svg-frame:hover svg {
@@ -610,11 +822,16 @@ object {
   .svg-frame {
     width: 250px;
     height: 250px;
+    max-width: 85vw;
+    max-height: 85vw;
+    margin: 0 auto;
   }
   
   .svg-frame svg {
     width: 280px;
     height: 280px;
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 

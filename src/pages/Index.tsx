@@ -69,6 +69,11 @@ const Index = () => {
         theme === 'light' ? 'bg-gray-50 text-gray-800' : 'bg-gray-950 text-white'
       } theme-transition`}>
         {theme === 'dark' && <StarfieldBackground />}
+        {theme === 'light' && (
+          <div className="circuit-wrapper fixed inset-0">
+            <div className="circuit-background"></div>
+          </div>
+        )}
         <Navbar activeSection={activeSection} />
 
         <main className="relative z-10 scroll-smooth">

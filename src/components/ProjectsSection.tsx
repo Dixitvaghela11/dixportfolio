@@ -38,12 +38,22 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
         <Card className={`absolute w-full h-full rounded-xl backface-hidden flex flex-col theme-transition overflow-hidden ${
           theme === 'light' ? 'bg-white shadow-lg hover:shadow-xl' : 'glass'
         }`}>
-          <div className="h-[280px] relative">
+          <div className="h-[280px] relative bg-gray-200 dark:bg-gray-800 overflow-hidden">
             <img 
               src={project.image} 
               alt={project.title}
-              className="w-full h-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover object-center transition-opacity duration-300"
+              onLoad={(e) => {
+                e.currentTarget.style.opacity = '1';
+                const skeleton = e.currentTarget.nextElementSibling as HTMLElement;
+                if (skeleton) skeleton.style.display = 'none';
+              }}
+              style={{ opacity: 0 }}
             />
+            {/* Loading skeleton */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 animate-pulse" />
           </div>
           <CardContent className="p-6 flex-1 flex flex-col justify-between">
             <div>
@@ -199,13 +209,23 @@ const ProjectModal = ({ project, isOpen, onClose }: {
         <div className="space-y-8 animate-fadeIn">
           {/* Project Image */}
           <div className="w-full overflow-hidden rounded-lg shadow-lg">
-            <div className="relative aspect-[1536/1024]">
+            <div className="relative aspect-[1536/1024] bg-gray-200 dark:bg-gray-800">
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-all duration-500"
                 onError={e => { e.currentTarget.src = "/projects/placeholder.png"; }}
+                onLoad={(e) => {
+                  e.currentTarget.style.opacity = '1';
+                  const skeleton = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (skeleton) skeleton.style.display = 'none';
+                }}
+                style={{ opacity: 0 }}
               />
+              {/* Loading skeleton */}
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 animate-pulse" />
             </div>
           </div>
 

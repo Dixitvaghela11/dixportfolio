@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
 import { useTheme } from './ThemeProvider';
 
 const CustomCursor = () => {
@@ -7,13 +7,27 @@ const CustomCursor = () => {
   const [isPointer, setIsPointer] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [isOverChatbot, setIsOverChatbot] = useState(false);
+  const [isClicking, setIsClicking] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const trailRef = useRef<Array<{ x: number; y: number; id: number }>>([]);
+  const trailIdRef = useRef(0);
   
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
-  const springConfig = { damping: 25, stiffness: 700 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
+  // Different spring configs for different elements (creates lag effect)
+  const springConfigFast = { damping: 20, stiffness: 900 };
+  const springConfigMedium = { damping: 25, stiffness: 700 };
+  const springConfigSlow = { damping: 30, stiffness: 500 };
+  
+  const cursorXSpring = useSpring(cursorX, springConfigFast);
+  const cursorYSpring = useSpring(cursorY, springConfigFast);
+  
+  const trailXSpring = useSpring(cursorX, springConfigSlow);
+  const trailYSpring = useSpring(cursorY, springConfigSlow);
+  
+  const outerXSpring = useSpring(cursorX, springConfigMedium);
+  const outerYSpring = useSpring(cursorY, springConfigMedium);
 
   useEffect(() => {
     // Check if we're on a touch device
@@ -26,20 +40,48 @@ const CustomCursor = () => {
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
+      
+      // Add trail effect
+      trailIdRef.current += 1;
+      trailRef.current.push({
+        x: e.clientX,
+        y: e.clientY,
+        id: trailIdRef.current
+      });
+      
+      // Keep only last 5 trail points
+      if (trailRef.current.length > 5) {
+        trailRef.current.shift();
+      }
     };
+    
+    const handleMouseDown = () => setIsClicking(true);
+    const handleMouseUp = () => setIsClicking(false);
 
     const handlePointerElements = () => {
-      const elements = document.querySelectorAll('button, a, input, textarea, select, [role="button"], label');
+      const elements = document.querySelectorAll('button, a, input, textarea, select, [role="button"], label, [class*="card"], [class*="Card"]');
 
       elements.forEach(el => {
-        el.addEventListener('mouseenter', () => setIsPointer(true));
-        el.addEventListener('mouseleave', () => setIsPointer(false));
+        el.addEventListener('mouseenter', () => {
+          setIsPointer(true);
+          setIsHovering(true);
+        });
+        el.addEventListener('mouseleave', () => {
+          setIsPointer(false);
+          setIsHovering(false);
+        });
       });
 
       return () => {
         elements.forEach(el => {
-          el.removeEventListener('mouseenter', () => setIsPointer(true));
-          el.removeEventListener('mouseleave', () => setIsPointer(false));
+          el.removeEventListener('mouseenter', () => {
+            setIsPointer(true);
+            setIsHovering(true);
+          });
+          el.removeEventListener('mouseleave', () => {
+            setIsPointer(false);
+            setIsHovering(false);
+          });
         });
       };
     };
@@ -89,6 +131,8 @@ const CustomCursor = () => {
     };
 
     window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
     const cleanup = handlePointerElements();
     const chatbotCleanup = handleChatbotElements();
 
@@ -134,6 +178,8 @@ const CustomCursor = () => {
 
     return () => {
       window.removeEventListener('mousemove', moveCursor);
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
       cleanup();
       chatbotCleanup();
       // Restore default cursor when component unmounts
@@ -150,50 +196,73 @@ const CustomCursor = () => {
 
   return (
     <>
-      {/* Large outer circle */}
-      <motion.div
-        className="custom-cursor fixed top-0 left-0 w-8 h-8 pointer-events-none z-[9990] mix-blend-difference"
-        style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-          translateX: '-50%',
-          translateY: '-50%',
-          opacity: isOverChatbot ? 0 : 1,
-        }}
-      >
-        <motion.div
-          className={`w-full h-full rounded-full bg-white opacity-30`}
-          animate={{
-            scale: isPointer ? 1.5 : 1,
-          }}
-          transition={{ duration: 0.2 }}
-        />
-      </motion.div>
-
-      {/* Small inner dot */}
-      <motion.div
-        className="custom-cursor fixed top-0 left-0 w-2 h-2 pointer-events-none z-[9990] mix-blend-difference"
-        style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-          translateX: '-50%',
-          translateY: '-50%',
-          opacity: isOverChatbot ? 0 : 1,
-        }}
-      >
-        <motion.div
-          className="w-full h-full rounded-full bg-white"
-          animate={{
-            scale: isPointer ? 0 : 1,
-          }}
-          transition={{ duration: 0.2 }}
-        />
-      </motion.div>
-
-      {/* Gradient trail effect */}
+      {/* Outer glow ring - slowest follow */}
       <motion.div
         className="custom-cursor fixed top-0 left-0 pointer-events-none z-[9989]"
         style={{
+          x: trailXSpring,
+          y: trailYSpring,
+          translateX: '-50%',
+          translateY: '-50%',
+          opacity: isOverChatbot ? 0 : 0.3,
+        }}
+      >
+        <motion.div
+          className={`w-20 h-20 rounded-full border-2 ${
+            theme === 'light'
+              ? 'border-purple-500/40'
+              : 'border-purple-400/40'
+          }`}
+          animate={{
+            scale: isPointer ? 1.8 : isClicking ? 0.9 : 1.2,
+            rotate: isHovering ? 180 : 0,
+          }}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut"
+          }}
+          style={{
+            boxShadow: theme === 'light' 
+              ? '0 0 20px rgba(139, 92, 246, 0.3)' 
+              : '0 0 20px rgba(139, 92, 246, 0.5)',
+          }}
+        />
+      </motion.div>
+
+      {/* Gradient trail effect - medium follow */}
+      <motion.div
+        className="custom-cursor fixed top-0 left-0 pointer-events-none z-[9989]"
+        style={{
+          x: outerXSpring,
+          y: outerYSpring,
+          translateX: '-50%',
+          translateY: '-50%',
+          opacity: isOverChatbot ? 0 : 0.4,
+        }}
+      >
+        <motion.div
+          className={`w-16 h-16 rounded-full ${
+            theme === 'light'
+              ? 'bg-gradient-to-r from-purple-600/30 to-blue-500/30'
+              : 'bg-gradient-to-r from-purple-400/40 to-blue-400/40'
+          }`}
+          animate={{
+            scale: isPointer ? 1.5 : isClicking ? 0.8 : 1,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeOut"
+          }}
+          style={{
+            filter: 'blur(12px)',
+          }}
+        />
+      </motion.div>
+
+      {/* Main cursor ring - fast follow */}
+      <motion.div
+        className="custom-cursor fixed top-0 left-0 pointer-events-none z-[9990]"
+        style={{
           x: cursorXSpring,
           y: cursorYSpring,
           translateX: '-50%',
@@ -202,23 +271,117 @@ const CustomCursor = () => {
         }}
       >
         <motion.div
-          className={`w-24 h-24 rounded-full opacity-20 ${
+          className={`w-10 h-10 rounded-full border-2 ${
             theme === 'light'
-              ? 'bg-gradient-to-r from-purple-600 to-blue-500'
-              : 'bg-gradient-to-r from-purple-400 to-blue-400'
+              ? 'border-white/80'
+              : 'border-white/90'
           }`}
           animate={{
-            scale: isPointer ? 1.2 : 0.8,
+            scale: isPointer ? 1.8 : isClicking ? 0.7 : 1,
+            rotate: isHovering ? 360 : 0,
           }}
           transition={{
-            duration: 0.5,
-            ease: "easeInOut"
+            duration: 0.3,
+            ease: "easeOut"
           }}
           style={{
-            filter: 'blur(8px)',
+            boxShadow: theme === 'light'
+              ? '0 0 15px rgba(255, 255, 255, 0.5), inset 0 0 15px rgba(139, 92, 246, 0.3)'
+              : '0 0 15px rgba(255, 255, 255, 0.6), inset 0 0 15px rgba(139, 92, 246, 0.4)',
+            mixBlendMode: 'difference',
           }}
         />
       </motion.div>
+
+      {/* Inner dot - fastest follow */}
+      <motion.div
+        className="custom-cursor fixed top-0 left-0 pointer-events-none z-[9991]"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+          translateX: '-50%',
+          translateY: '-50%',
+          opacity: isOverChatbot ? 0 : 1,
+        }}
+      >
+        <motion.div
+          className={`w-2.5 h-2.5 rounded-full ${
+            theme === 'light'
+              ? 'bg-gradient-to-r from-purple-500 to-blue-500'
+              : 'bg-gradient-to-r from-purple-400 to-blue-400'
+          }`}
+          animate={{
+            scale: isPointer ? 0 : isClicking ? 1.5 : 1,
+          }}
+          transition={{
+            duration: 0.2,
+            ease: "easeOut"
+          }}
+          style={{
+            boxShadow: theme === 'light'
+              ? '0 0 10px rgba(139, 92, 246, 0.8)'
+              : '0 0 10px rgba(139, 92, 246, 1)',
+          }}
+        />
+      </motion.div>
+
+      {/* Click ripple effect */}
+      <AnimatePresence>
+        {isClicking && (
+          <motion.div
+            className="custom-cursor fixed top-0 left-0 pointer-events-none z-[9988]"
+            style={{
+              x: cursorXSpring,
+              y: cursorYSpring,
+              translateX: '-50%',
+              translateY: '-50%',
+            }}
+            initial={{ scale: 0, opacity: 0.8 }}
+            animate={{ scale: 2, opacity: 0 }}
+            exit={{ scale: 2.5, opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div
+              className={`w-4 h-4 rounded-full border-2 ${
+                theme === 'light'
+                  ? 'border-purple-500/60'
+                  : 'border-purple-400/60'
+              }`}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Hover glow effect */}
+      {isHovering && (
+        <motion.div
+          className="custom-cursor fixed top-0 left-0 pointer-events-none z-[9987]"
+          style={{
+            x: cursorXSpring,
+            y: cursorYSpring,
+            translateX: '-50%',
+            translateY: '-50%',
+          }}
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 3, opacity: 0 }}
+          transition={{
+            duration: 1,
+            repeat: Infinity,
+            ease: "easeOut"
+          }}
+        >
+          <div
+            className={`w-8 h-8 rounded-full ${
+              theme === 'light'
+                ? 'bg-gradient-to-r from-purple-600/20 to-blue-500/20'
+                : 'bg-gradient-to-r from-purple-400/30 to-blue-400/30'
+            }`}
+            style={{
+              filter: 'blur(8px)',
+            }}
+          />
+        </motion.div>
+      )}
     </>
   );
 };
