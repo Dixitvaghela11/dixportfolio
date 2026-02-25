@@ -71,7 +71,7 @@ const LoadingScreen = () => {
             theme === 'light' ? 'text-gray-700' : 'text-gray-300'
             }`}
           >
-            Loading...
+            {/* Loading... */}
           </motion.p>
       </div>
     </motion.div>

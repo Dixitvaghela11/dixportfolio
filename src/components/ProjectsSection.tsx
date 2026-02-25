@@ -27,7 +27,8 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
   return (
     <div 
       className="h-[520px] perspective-1000 w-full cursor-pointer"
-      onClick={() => setIsFlipped(!isFlipped)}
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
     >
       <div 
         className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${
@@ -78,7 +79,7 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project; onViewDetai
             
             <div className="mt-4 pt-2">
               <p className="text-xs text-gray-400 text-center border-t border-gray-200 dark:border-gray-700 pt-3">
-                Click to see details
+                Hover to see details
               </p>
             </div>
           </CardContent>
