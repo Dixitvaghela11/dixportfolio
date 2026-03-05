@@ -180,17 +180,17 @@ const ProjectModal = ({ project, isOpen, onClose }: {
 
   return (
     <div 
-      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+      className="fixed inset-0 bg-black/50 z-50 flex items-end md:items-center justify-center p-2 md:p-4 backdrop-blur-sm"
       onClick={handleBackdropClick}
     >
-      <div className={`relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-xl p-6 ${
+      <div className={`relative w-full md:w-auto max-w-lg md:max-w-3xl max-h-[92vh] overflow-y-auto rounded-t-2xl md:rounded-xl p-4 md:p-6 shadow-2xl ${
         theme === 'light' ? 'bg-white' : 'bg-gray-900'
       }`}>
         {/* Improved close button */}
-        <div className="absolute -top-4 -right-4 z-10">
+        <div className="absolute top-3 right-3 z-10">
           <button
             onClick={onClose}
-            className={`group flex items-center justify-center w-8 h-8 rounded-full shadow-lg transition-all duration-200 ${
+            className={`group flex items-center justify-center w-9 h-9 rounded-full shadow-lg transition-all duration-200 ${
               theme === 'light' 
                 ? 'bg-white hover:bg-gray-100' 
                 : 'bg-gray-800 hover:bg-gray-700'
@@ -207,10 +207,10 @@ const ProjectModal = ({ project, isOpen, onClose }: {
         </div>
 
         {/* Add a subtle animation to modal content */}
-        <div className="space-y-8 animate-fadeIn">
+        <div className="space-y-6 md:space-y-8 animate-fadeIn">
           {/* Project Image */}
-          <div className="w-full overflow-hidden rounded-lg shadow-lg">
-            <div className="relative aspect-[1536/1024] bg-gray-200 dark:bg-gray-800">
+          <div className="w-full overflow-hidden rounded-xl shadow-md md:shadow-lg">
+            <div className="relative aspect-video md:aspect-[1536/1024] bg-gray-200 dark:bg-gray-800">
               <img 
                 src={project.image} 
                 alt={project.title}
@@ -232,10 +232,10 @@ const ProjectModal = ({ project, isOpen, onClose }: {
 
           {/* Project Title */}
           <div>
-            <h3 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500 pr-10">
               {project.title}
             </h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mt-2">
               {project.technologies.map((tech, idx) => (
                 <span
                   key={idx}
@@ -255,7 +255,7 @@ const ProjectModal = ({ project, isOpen, onClose }: {
             }`}>
               Overview
             </h4>
-            <p className={`text-base leading-relaxed ${
+            <p className={`text-sm md:text-base leading-relaxed ${
               theme === 'light' ? 'text-gray-600' : 'text-gray-300'
             }`}>
               {project.longDescription}
@@ -312,6 +312,30 @@ const ProjectsSection = () => {
   const { theme } = useTheme();
 
   const projects: Project[] = [
+    {
+      title: "Patient Room Service Check List",
+      description: "Smart duty roster system based on patient acuity and workload",
+      longDescription:
+        "The Patient Room Service Check List system is designed to help hospital staff efficiently manage and monitor room service tasks for patients. The system allows staff to complete digital checklists for different room categories, ensuring that all required services such as cleaning, equipment checks, and patient support tasks are completed on time. It supports QR-based checklist access, allowing staff to quickly scan a room code and update the checklist instantly. The system also supports multiple image uploads for proof of task completion. With secure authentication and role-based access control, administrators can manage users, monitor service status, and maintain service quality across hospital departments.",
+      image: "/projects/patient-room-service.png",
+      technologies: [
+        { name: "Flutter", color: "#FF2D20" },
+        { name: "PHP", color: "#61DAFB" },
+        { name: "CSS", color: "#264DE4" },
+        { name: "Bootstrap", color: "#F0DB4F" },
+        { name: "MySQL", color: "#4479A1" },
+        { name: "REST API", color: "#6C757D" }
+      ],
+      category: "flutter",
+      features: [
+        "Multiple Room Category wise Check List",
+        "Check list user friendly interface",
+        "Multiple image upload",
+        "QR Based CheckList management",
+        "User authentication and authorization",
+        "Role based access control"
+      ]
+    },
     {
       title: "Patient Acuity & Workload-Based Duty Roster",
       description: "Smart duty roster system based on patient acuity and workload",

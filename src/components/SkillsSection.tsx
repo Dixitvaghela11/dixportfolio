@@ -54,9 +54,17 @@ const SkillsSection = () => {
       skills: [
         { name: "PHP", icon: '/skills/php.svg', proficiency: 88 },
         { name: "Laravel", icon: '/skills/laravel.svg', proficiency: 85 },
-        { name: "ASP.NET", icon: '/skills/dotnet.svg', proficiency: 80 },
-        // { name: "Node.js", icon: '/skills/nodejs.svg', proficiency: 65 },
+        // { name: "ASP.NET", icon: '/skills/dotnet.svg', proficiency: 80 },
+        { name: "Node.js", icon: '/skills/nodejs.svg', proficiency: 65 },
         // { name: "C#", icon: '/skills/csharp.svg', proficiency: 60 }
+      ]
+    },
+    {
+      name: "Mobile Application Development",
+      icon: <MonitorSmartphone className="w-8 h-8 text-green-500" />,
+      skills: [
+        { name: "Flutter", icon: '/skills/flutter.svg', proficiency: 85 },
+        { name: "Native PHP", icon: '/skills/native.svg', proficiency: 50 }
       ]
     },
     {
@@ -69,14 +77,15 @@ const SkillsSection = () => {
         { name: "Sql Server", icon: '/skills/sqlserver.svg', proficiency: 80 }
       ]
     },
+
     {
       name: "Tools & Technologies",
       icon: <Wrench className="w-8 h-8 text-gray-500" />,
       skills: [
         { name: "Git", icon: '/skills/git.svg', proficiency: 85 },
-        { name: "GitHub", icon: '/skills/github.svg', proficiency: 90 },
+        // { name: "GitHub", icon: '/skills/github.svg', proficiency: 90 },
         { name: "Shopify", icon: '/skills/shopify.svg', proficiency: 85 },
-        { name: "Wordpress", icon: '/skills/wordpress.svg', proficiency: 70 },
+        // { name: "Wordpress", icon: '/skills/wordpress.svg', proficiency: 70 },
         { name: "Power BI", icon: '/skills/powerbi.svg', proficiency: 80 }
       ]
     },

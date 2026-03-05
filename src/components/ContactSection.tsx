@@ -84,7 +84,7 @@ const ContactSection = () => {
       icon: <Globe className="h-5 w-5" />,
       label: "Website",
       value: "dixitvaghela.netlify.app",
-      href: "https://dixdev.netlify.app"
+      href: "https://dixportfolio.netlify.app"
     },
     {
       icon: <Github className="h-5 w-5" />,
